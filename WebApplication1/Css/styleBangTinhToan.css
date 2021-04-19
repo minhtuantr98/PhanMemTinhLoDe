@@ -1,0 +1,477 @@
+﻿
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+
+.dl-horizontal dt {
+	white-space: normal;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+
+input,
+select,
+textarea {
+	max-width: 280px;
+	/*height: 31px;*/
+}
+
+.dam-bg {
+	background-image: url('/files/dam-bg.jpg');
+	width: 650px;
+	height: 1153px;
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: 100% 100%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dam-bg,
+input,
+select {
+	font-weight: bold;
+}
+
+	.dam-bg span {
+		color: blue;
+	}
+
+	.dam-bg select,
+	.dam-bg input[type=text],
+	.dam-bg input[type=number] {
+		color: red;
+	}
+
+#macBeTong {
+	position: absolute;
+	width: 150px;
+	top: 120px;
+	left: 129px;
+}
+
+#macThepDoc {
+	position: absolute;
+	width: 150px;
+	top: 213px;
+	left: 129px;
+}
+
+#macThepDai {
+	position: absolute;
+	width: 150px;
+	top: 283px;
+	left: 129px;
+}
+
+#chieuRongDam {
+	position: absolute;
+	max-width: 280px;
+	top: 373px;
+	left: 197px;
+	width: 76px;
+	border: 0px;
+	background: transparent;
+}
+
+#chieuCaoDam {
+	position: absolute;
+	max-width: 280px;
+	top: 396px;
+	left: 197px;
+	width: 76px;
+	border: 0px;
+	background: transparent;
+}
+
+#trongTamCotThep {
+	position: absolute;
+	max-width: 280px;
+	top: 419px;
+	left: 197px;
+	width: 76px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuNen1 {
+	position: absolute;
+	max-width: 280px;
+	top: 673px;
+	left: 214px;
+	width: 44px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuNen2 {
+	position: absolute;
+	max-width: 280px;
+	top: 675px;
+	left: 321px;
+	width: 44px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuNen3 {
+	position: absolute;
+	max-width: 280px;
+	top: 675px;
+	left: 427px;
+	width: 50px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuNen4 {
+	position: absolute;
+	max-width: 280px;
+	top: 675px;
+	left: 539px;
+	width: 45px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuKeo1 {
+	position: absolute;
+	max-width: 280px;
+	top: 791px;
+	left: 214px;
+	width: 45px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuKeo2 {
+	position: absolute;
+	max-width: 280px;
+	top: 791px;
+	left: 321px;
+	width: 45px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuKeo3 {
+	position: absolute;
+	max-width: 280px;
+	top: 791px;
+	left: 427px;
+	width: 45px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriChiuKeo4 {
+	position: absolute;
+	max-width: 280px;
+	top: 791px;
+	left: 539px;
+	width: 45px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriDai1 {
+	position: absolute;
+	max-width: 280px;
+	top: 981px;
+	left: 137px;
+	width: 50px;
+	border: 0px;
+	background: transparent;
+}
+
+#boTriDai2 {
+	position: absolute;
+	max-width: 280px;
+	top: 981px;
+	left: 329px;
+	width: 50px;
+	border: 0px;
+	background: transparent;
+}
+
+#jb4 {
+	position: absolute;
+	max-width: 280px;
+	top: 1435px;
+	left: 380px;
+	width: 50px;
+	border: 0px;
+	background: transparent;
+}
+
+.Rb1 {
+	position: absolute;
+	top: 143px;
+	left: 200px;
+}
+
+.Rbt {
+	position: absolute;
+	top: 166px;
+	left: 200px;
+}
+
+.Ebt {
+	position: absolute;
+	top: 190px;
+	left: 200px;
+}
+
+.Rs {
+	position: absolute;
+	top: 237px;
+	left: 200px;
+}
+
+.Rsc {
+	position: absolute;
+	top: 260px;
+	left: 200px;
+}
+
+.Rsw {
+	position: absolute;
+	top: 307px;
+	left: 200px;
+}
+
+.Es {
+	position: absolute;
+	top: 329px;
+	left: 200px;
+}
+
+.Am {
+	position: absolute;
+	top: 586px;
+	left: 253px;
+}
+
+.Ar {
+	position: absolute;
+	top: 585px;
+	left: 387px;
+}
+
+.nhanXet {
+	position: absolute;
+	top: 611px;
+	left: 93px;
+}
+
+.An {
+	position: absolute;
+	top: 655px;
+	left: 130px;
+}
+
+.An1 {
+	position: absolute;
+	top: 765px;
+	left: 299px;
+	display: none;
+}
+
+.Anbt {
+	position: absolute;
+	top: 700px;
+	left: 130px;
+}
+
+.NhanXetChiuNen {
+	position: absolute;
+	top: 724px;
+	left: 95px;
+}
+
+.Ak {
+	position: absolute;
+	top: 770px;
+	left: 132px;
+}
+
+.Akbt {
+	position: absolute;
+	top: 818px;
+	left: 132px;
+}
+
+.NhanXetChiuKeo {
+	position: absolute;
+	top: 841px;
+	left: 94px;
+}
+
+.Qnc {
+	position: absolute;
+	top: 920px;
+	left: 270px;
+}
+
+.Q {
+	position: absolute;
+	top: 920px;
+	left: 419px;
+}
+
+.NhanXetIII {
+	position: absolute;
+	top: 1244px;
+	left: 169px;
+	color: blue;
+}
+
+.Ad {
+	position: absolute;
+	top: 985px;
+	left: 542px;
+}
+
+.Stt {
+	position: absolute;
+	top: 1009px;
+	left: 428px;
+}
+
+.Sct {
+	position: absolute;
+	top: 1032px;
+	left: 428px;
+}
+
+.Smax {
+	position: absolute;
+	top: 1079px;
+	left: 428px;
+}
+
+.S {
+	position: absolute;
+	top: 1123px;
+	left: 428px;
+}
+
+.soSanhAlphaAmAr {
+	position: absolute;
+	top: 586px;
+	left: 315px;
+}
+
+#title {
+	position: absolute;
+	top: 70px;
+	left: 246px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc1 {
+	position: absolute;
+	top: 520px;
+	left: 18px;
+	width: 105px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc2 {
+	position: absolute;
+	top: 520px;
+	left: 128px;
+	width: 65px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc3 {
+	position: absolute;
+	top: 520px;
+	left: 198px;
+	width: 114px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc4 {
+	position: absolute;
+	top: 520px;
+	left: 316px;
+	width: 106px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc5 {
+	position: absolute;
+	top: 520px;
+	left: 426px;
+	width: 106px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#thongSoNoiNuc6 {
+	position: absolute;
+	top: 520px;
+	left: 536px;
+	width: 105px;
+	text-align: center;
+	border: 0px;
+	background: transparent;
+}
+
+#btnTinhToan {
+	position: absolute;
+	top: 552px;
+	left: 432px;
+}
+
+#btnNhanXet {
+	position: absolute;
+	top: 552px;
+	left: 522px;
+}
+
+#btnPrint {
+	position: absolute;
+	top: 552px;
+	left: 354px;
+	width: 70px;
+}
+
+@media print {
+	@page {
+		margin: 0;
+	}
+
+	.notPrint {
+		display: none
+	}
+
+	body {
+		margin: 0;
+	}
+}
+
+

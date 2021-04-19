@@ -1,0 +1,26 @@
+﻿#UlMenu li {
+    text-decoration: none !important;
+    list-style: none;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+    #UlMenu li:hover {
+        color: darkgoldenrod;
+        /* background-color: rgba(0, 0, 0, 0.075); */
+    }
+
+#btnAction btn-dark:hover {
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+.btnAction {
+    background-color: #3f404a;
+    color: white;
+    font-size: 40px;
+    border-width: 0px;
+    padding-right: 0px;
+    text-transform: uppercase;
+}
