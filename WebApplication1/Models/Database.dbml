@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TinhToanDamCot" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\SQLEXPRESS01;Initial Catalog=TinhToanDamCot;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TinhToanDamCotConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_VatLieu" Member="tbl_VatLieus">
+    <Type Name="tbl_VatLieu">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ModuleDanHoi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CuongDoKeo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CuongDoNen" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Keyword" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsLocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsLockedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Order]" Member="Order" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ParrentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ExtentData" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DeleteAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
