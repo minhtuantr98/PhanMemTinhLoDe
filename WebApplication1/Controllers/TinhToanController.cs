@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string GetListThepDai()
         {
-            var listVatLieu = db.tbl_VatLieus.Where(o => o.Type.Equals(Constants.ThepDoc_Type));
+            var listVatLieu = db.tbl_VatLieus.Where(o => o.Type.Equals(Constants.ThepDai_Type));
             return JsonConvert.SerializeObject(listVatLieu);
         }
 
