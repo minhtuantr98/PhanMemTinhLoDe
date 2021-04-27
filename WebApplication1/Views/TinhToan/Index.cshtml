@@ -45,128 +45,129 @@
                 <div class="col-md-8 text-xl-center">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="dam-bg">
-                                <img src="~/Content/img/dam-bg-002.jpg">
-                                <input type="text" id="title" value="DC1">
-                                <input type="text" id="thongSoNoiNuc1" value="……..">
-                                <input type="number" id="thongSoNoiNuc2" value="……">
-                                <input type="number" id="thongSoNoiNuc3" value="……..">
-                                <input type="text" id="thongSoNoiNuc4" style="text-transform:uppercase" value="THB">
-                                <input type="number" id="thongSoNoiNuc5" value="8">
-                                <input type="number" id="thongSoNoiNuc6" value="1.2">
+							<div class="dam-bg">
+								<img src="~/Content/img/dam-bg-002.jpg">
+								<input type="text" id="title" value="DC1">
+								<input type="text" id="thongSoNoiNuc1" value="……..">
+								<input type="number" id="thongSoNoiNuc2" value="……">
+								<input type="number" id="thongSoNoiNuc3" value="……..">
+								<input type="text" id="thongSoNoiNuc4" style="text-transform:uppercase" value="THB">
+								<input type="number" id="thongSoNoiNuc5" value="8">
+								<input type="number" id="thongSoNoiNuc6" value="1.2">
 
-                                <select id="macBeTong" class="macBeTong">
+								<select id="macBeTong" class="macBeTong">
 
-                                    @*<option value="B7,5">B7,5</option>
-                                        <option value="B10">B10</option>
-                                        <option value="B12,5">B12,5</option>
-                                        <option value="B15(M200)">B15(M200)</option>
-                                        <option value="B20(M250)">B20(M250)</option>
-                                        <option selected="" value="B22,5(M300)">B22,5(M300)</option>
-                                        <option value="B25(M350)">B25(M350)</option>
-                                        <option value="B30(M400)">B30(M400)</option>
-                                        <option value="B35(M450)">B35(M450)</option>
-                                        <option value="B40(M500)">B40(M500)</option>
-                                        <option value="B45(M600)">B45(M600)</option>*@
-                                </select>
-                                <br>
-
-
-                                <select id="macThepDoc" class="macThepDoc" onchange="tinhToan()">
-                                    @*<option value="AI (CI)">AI (CI)</option>
-                                        <option value="AII(CII)">AII(CII)</option>
-                                        <option selected="" value="AIII(CIII)">AIII(CIII)</option>
-                                        <option value="AIV(CIV)">AIV(CIV)</option>
-                                        <option value="AV">AV</option>
-                                        <option value="AVI">AVI</option>
-                                        <option value="AVII">AVII</option>*@
-                                </select>
-                                <br>
+									@*<option value="B7,5">B7,5</option>
+			<option value="B10">B10</option>
+			<option value="B12,5">B12,5</option>
+			<option value="B15(M200)">B15(M200)</option>
+			<option value="B20(M250)">B20(M250)</option>
+			<option selected="" value="B22,5(M300)">B22,5(M300)</option>
+			<option value="B25(M350)">B25(M350)</option>
+			<option value="B30(M400)">B30(M400)</option>
+			<option value="B35(M450)">B35(M450)</option>
+			<option value="B40(M500)">B40(M500)</option>
+			<option value="B45(M600)">B45(M600)</option>*@
+								</select>
+								<br>
 
 
-                                <select id="macThepDai" onchange="tinhToan()">
-                                    @*<option selected="" value="AI (CI)">AI (CI)</option>
-                                        <option value="AII(CII)">AII(CII)</option>
-                                        <option value="AIII(CIII)">AIII(CIII)</option>
-                                        <option value="AIV(CIV)">AIV(CIV)</option>
-                                        <option value="AV">AV</option>
-                                        <option value="AVI">AVI</option>
-                                        <option value="AVII">AVII</option>*@
-                                </select>
-                                <br>
+								<select id="macThepDoc" class="macThepDoc" onchange="tinhToan()">
+									@*<option value="AI (CI)">AI (CI)</option>
+			<option value="AII(CII)">AII(CII)</option>
+			<option selected="" value="AIII(CIII)">AIII(CIII)</option>
+			<option value="AIV(CIV)">AIV(CIV)</option>
+			<option value="AV">AV</option>
+			<option value="AVI">AVI</option>
+			<option value="AVII">AVII</option>*@
+								</select>
+								<br>
 
 
-                                <input id="chieuRongDam" type="number" min="0" step="1" value="220">
-                                <br>
-
-                                <input id="chieuCaoDam" type="number" min="0" step="1" value="500">
-                                <br>
-
-                                <input id="trongTamCotThep" type="number" min="0" step="1" value="40">
-
-
-                                <input id="boTriChiuNen1" type="number" min="0" step="1" value="2">
-
-                                <input id="boTriChiuNen2" type="number" min="0" step="1" value="18">
-
-                                <input id="boTriChiuNen3" type="number" min="0" step="1" value="0">
-
-                                <input id="boTriChiuNen4" type="number" min="0" step="1" value="18">
+								<select id="macThepDai" onchange="tinhToan()">
+									@*<option selected="" value="AI (CI)">AI (CI)</option>
+			<option value="AII(CII)">AII(CII)</option>
+			<option value="AIII(CIII)">AIII(CIII)</option>
+			<option value="AIV(CIV)">AIV(CIV)</option>
+			<option value="AV">AV</option>
+			<option value="AVI">AVI</option>
+			<option value="AVII">AVII</option>*@
+								</select>
+								<br>
 
 
-                                <input id="boTriChiuKeo1" type="number" min="0" step="1" value="2">
+								<input id="chieuRongDam" type="number" min="0" step="1" value="220">
+								<br>
 
-                                <input id="boTriChiuKeo2" type="number" min="0" step="1" value="18">
+								<input id="chieuCaoDam" type="number" min="0" step="1" value="500">
+								<br>
 
-                                <input id="boTriChiuKeo3" type="number" min="0" step="1" value="1">
+								<input id="trongTamCotThep" type="number" min="0" step="1" value="40">
+								<br>
+								<input id="beRongCanh" type="number" min="0" step="1" value="40">
 
-                                <input id="boTriChiuKeo4" type="number" min="0" step="1" value="18">
+								<input id="boTriChiuNen1" type="number" min="0" step="1" value="2">
+
+								<input id="boTriChiuNen2" type="number" min="0" step="1" value="18">
+
+								<input id="boTriChiuNen3" type="number" min="0" step="1" value="0">
+
+								<input id="boTriChiuNen4" type="number" min="0" step="1" value="18">
 
 
-                                <input id="boTriDai1" type="number" min="0" step="1" value="6">
+								<input id="boTriChiuKeo1" type="number" min="0" step="1" value="2">
+
+								<input id="boTriChiuKeo2" type="number" min="0" step="1" value="18">
+
+								<input id="boTriChiuKeo3" type="number" min="0" step="1" value="1">
+
+								<input id="boTriChiuKeo4" type="number" min="0" step="1" value="18">
 
 
-                                <input id="boTriDai2" type="number" min="0" step="1" value="2">
+								<input id="boTriDai1" type="number" min="0" step="1" value="6">
+
+
+								<input id="boTriDai2" type="number" min="0" step="1" value="2">
 
 
 
 
 
-                                <span class="Am">0.1</span>
-                                <span class="Ar">0.41</span>
-                                <i><span class="nhanXet">Chỉ cần đặt cốt đơn</span></i>
-                                <span class="An">0</span>
-                                <span class="An1">-10.9668727984344</span>
+								<span class="Am">0.1</span>
+								<span class="Ar">0.41</span>
+								<i><span class="nhanXet">Chỉ cần đặt cốt đơn</span></i>
+								<span class="An">0</span>
+								<span class="An1">-10.9668727984344</span>
 
-                                <span class="Ak">5</span>
-                                <span class="Anbt">5.1</span>
-                                <i><span class="NhanXetChiuNen">Bố trí thép chịu nén hợp lý</span></i>
-                                <span class="Akbt">7.6</span>
-                                <i><span class="NhanXetChiuKeo">Bố trí thép chịu kéo hợp lý</span></i>
+								<span class="Ak">5</span>
+								<span class="Anbt">5.1</span>
+								<i><span class="NhanXetChiuNen">Bố trí thép chịu nén hợp lý</span></i>
+								<span class="Akbt">7.6</span>
+								<i><span class="NhanXetChiuKeo">Bố trí thép chịu kéo hợp lý</span></i>
 
-                                <span class="Qnc">39.5</span>
-                                <span class="Q">1.2</span>
+								<span class="Qnc">39.5</span>
+								<span class="Q">1.2</span>
 
-                                <span class="Ad">0.57</span>
-                                <span class="Stt">150</span>
+								<span class="Ad">0.57</span>
+								<span class="Stt">150</span>
 
-                                <span class="Sct">375</span>
-                                <span class="Smax">1058</span>
-                                <span class="S">150</span>
-                                <span class="Rb1" id="Rb1">0</span>
-                                <span class="Rbt" id="Rbt">0</span>
+								<span class="Sct">375</span>
+								<span class="Smax">1058</span>
+								<span class="S">150</span>
+								<span class="Rb1" id="Rb1">0</span>
+								<span class="Rbt" id="Rbt">0</span>
 
-                                <span class="Ebt" id="Ebt">0</span>
-                                <span class="Rs" id="Rs">0</span>
-                                <span class="Rsc" id="Rsc">0</span>
-                                <span class="Rsw" id="Rsw">0</span>
-                                @*<span class="Es">0</span>*@
-                                <span class="soSanhAlphaAmAr">≤</span>
-                                <span class="Es" id="Es">0</span>
-                                <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">
-                                @*<input id="btnNhanXet" type="button" value="Nhận xét" class="btn btn-danger notPrint" onclick="shareFB(nhanXetBoTri)">*@
-                                <input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
-                            </div>
+								<span class="Ebt" id="Ebt">0</span>
+								<span class="Rs" id="Rs">0</span>
+								<span class="Rsc" id="Rsc">0</span>
+								<span class="Rsw" id="Rsw">0</span>
+								@*<span class="Es">0</span>*@
+								<span class="soSanhAlphaAmAr">≤</span>
+								<span class="Es" id="Es">0</span>
+								<input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">
+								@*<input id="btnNhanXet" type="button" value="Nhận xét" class="btn btn-danger notPrint" onclick="shareFB(nhanXetBoTri)">*@
+								<input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
+							</div>
                         </div>
                         <div class="col-md-12">
 

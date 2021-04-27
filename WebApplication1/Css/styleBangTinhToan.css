@@ -104,6 +104,17 @@ select {
 	background: transparent;
 }
 
+#beRongCanh {
+	position: absolute;
+	max-width: 280px;
+	top: 427px;
+	left: 200px;
+	width: 76px;
+	border: 0px;
+	background: transparent;
+}
+
+
 #boTriChiuNen1 {
 	position: absolute;
 	max-width: 280px;
