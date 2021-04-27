@@ -77,8 +77,8 @@ select {
 #chieuRongDam {
 	position: absolute;
 	max-width: 280px;
-	top: 373px;
-	left: 197px;
+	top: 366px;
+	left: 200px;
 	width: 76px;
 	border: 0px;
 	background: transparent;
@@ -87,8 +87,8 @@ select {
 #chieuCaoDam {
 	position: absolute;
 	max-width: 280px;
-	top: 396px;
-	left: 197px;
+	top: 387px;
+	left: 200px;
 	width: 76px;
 	border: 0px;
 	background: transparent;
@@ -97,8 +97,8 @@ select {
 #trongTamCotThep {
 	position: absolute;
 	max-width: 280px;
-	top: 419px;
-	left: 197px;
+	top: 406px;
+	left: 200px;
 	width: 76px;
 	border: 0px;
 	background: transparent;
