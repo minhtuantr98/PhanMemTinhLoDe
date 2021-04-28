@@ -86,7 +86,7 @@ textarea {
     border: 0px;
     background: transparent;
 }
-		#macbetong {
+		#macBeTong {
 			position: absolute;
 			width: 134px;
 			top: 122px;
@@ -96,7 +96,7 @@ textarea {
 .RB {
     position: absolute;
     width: 80px;
-    top: 151px;
+    top: 147px;
     left: 200px;
     height: 16px;
 }
@@ -116,7 +116,7 @@ textarea {
     left: 200px;
     height: 16px;
 }
-		#macthep {
+		#macThepDoc {
 			position: absolute;
 			width: 134px;
 			top: 218px;
@@ -572,137 +572,137 @@ textarea {
     </header>
     <!-- Services-->
     <section class="page-section" id="services" style="background-color:#3f404a;">
-		<div class="container body-content">
+        <div class="container" style="width: 100%;">
+            <div class="row text-uppercase" style="color: white; padding: 1rem !important;">
+                <div class="col-md-2 text-xl-left" style="font-size: 20px; padding-top: 100px;">
+                    <ul id="UlMenu" style="text-align: left;">
+                        <li>Thiết lập</li>
+                        <li>Thông số</li>
+                        <li>Nội lực</li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <div class="body-bg">
+                        <img src="~/Content/img/cot-bg-002.jpg">
+                        <input type="text" id="CK" value="C1">
+                        <input type="text" id="tang" value="TẦNG 2">
+                        <input type="text" id="phantu" value="C12">
+                        <input type="text" id="chieudai" value="5">
+                        <input type="text" id="hesomuy" value="0.7">
+                        <input type="text" id="vitri" value="0">
+                        <input type="text" id="tohop" value="TH1">
+                        <input type="text" id="m2" value="-3">
+                        <input type="text" id="m3" value="2">
+                        <input type="text" id="n" value="150">
+
+
+                        <select id="macBeTong" class="macBeTong" onchange="tinhToan()">
+                        </select>
+                        <br>
+
+
+                        <select id="macThepDoc" class="macThepDoc" onchange="tinhToan()">
+                        </select>
+                        <br>
+
+
+
+                        <input id="b" type="number" min="0" step="1" value="300">
+                        <br>
+
+                        <input id="h" type="number" min="0" step="1" value="400">
+                        <br>
+
+                        <input id="a" type="number" min="0" step="1" value="40">
+
+
+                        <input id="sl1" type="number" min="0" step="1" value="5">
+
+                        <input id="dk1" type="number" min="0" step="1" value="18">
+
+                        <input id="sl2" type="number" min="0" step="1" value="5">
+
+                        <input id="dk2" type="number" min="0" step="1" value="18">
+
+
+                        <span class="RB" id="Rb1">0</span>
+                        <span class="RBT" id="Rbt">0</span>
+                        <span class="EBT" id="Ebt">0</span>
+                        <span class="RS" id="Rs">0</span>
+                        <span class="RSC" id="Rsc">0</span>
+
+                        <span class="L">3.5</span>
+                        <span class="LH">30.4</span>
+                        <span class="LB">40.5</span>
+                        <span class="SSMUYH"> &gt; 28</span>
+                        <span class="SSMUYB"> &gt; 28</span>
+
+                        <span class="MUYH">1.2</span>
+                        <span class="MUYB">1.4</span>
+                        <span class="MH">2.4</span>
+                        <span class="MB">4.2</span>
+                        <i><span class="MHH">2.4</span></i>
+
+                        <span class="MBB">4.2</span>
+                        <span class="SSM"> ≤ </span>
+
+                        <span class="NXCANH">cạnh b</span>
+                        <span class="M">4.9</span>
+
+                        <span class="E1">32.7</span>
+                        <span class="EA">22.7</span>
+                        <span class="EE">155.8</span>
+                        <span class="E">155.8</span>
+                        <span class="EPXILON">0.1</span>
+
+                        <span class="SSEPXILON"> ≤ 0.3 </span>
+                        <span class="X1">288.5</span>
+                        <span class="SSX1"> &gt; </span>
+                        <span class="XR">149.9</span>
+                        <span class="NXNEN">Tính toán nén Đúng tâm</span>
+
+                        <span class="AS">19.4</span>
+                        <span class="ABT">25.4</span>
+                        <span class="SSABT">≥</span>
+                        <span class="AS1">19.4</span>
+                        <span class="MUYBT">2.35</span>
+                        <span class="SSMUYBT">≤</span>
+                        <span class="NXBT">  Bố trí thép cột hợp lý</span>
+
+
+                        <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint " onclick="tinhThep()">
+
+                        <input id="btnNhanXet" type="button" value="Nhận xét bố trí" class="btn btn-danger notPrint " onclick="shareFB(nhanXetBoTri)">
+                        <input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
+
+
+                    </div>
+                </div>
+                <div class="col-md-2 text-lg-right" style="font-size: 20px; padding-top: 100px;">
+                    <ul id="UlMenu">
+                        <li>Tính thép</li>
+                        <li>In báo cáo</li>
+                        <li>Nhận xét</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
 
 
 
 
-			<link rel="stylesheet" href="/Style/htsCot.css">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="body-bg">
-						<img src="~/Content/img/cot-bg-002.jpg">
-						<input type="text" id="CK" value="C1">
-						<input type="text" id="tang" value="TẦNG 2">
-						<input type="text" id="phantu" value="C12">
-						<input type="text" id="chieudai" value="5">
-						<input type="text" id="hesomuy" value="0.7">
-						<input type="text" id="vitri" value="0">
-						<input type="text" id="tohop" value="TH1">
-						<input type="text" id="m2" value="-3">
-						<input type="text" id="m3" value="2">
-						<input type="text" id="n" value="150">
+            <link rel="stylesheet" href="/Style/htsCot.css">
+            <div class="row">
+                
+                <div class="col-md-12">
+
+                </div>
 
 
-						<select id="macbetong" onchange="tinhToan()">
+            </div>
 
-							<option value="B7,5">B7,5</option>
-							<option value="B10">B10</option>
-							<option value="B12,5">B12,5</option>
-							<option value="B15(M200)">B15(M200#)</option>
-							<option value="B20(M250)">B20(M250)</option>
-							<option selected="" value="B22,5(M300)">B22,5(M300)</option>
-							<option value="B25(M350)">B25(M350)</option>
-							<option value="B30(M400)">B30(M400)</option>
-							<option value="B35(M450)">B35(M450)</option>
-							<option value="B40(M500)">B40(M500)</option>
-							<option value="B45(M600)">B45(M600)</option>
-						</select>
-						<br>
-
-
-						<select id="macthep" onchange="tinhToan()">
-							<option value="AI (CI)">AI (CI)</option>
-							<option value="AII(CII)">AII(CII)</option>
-							<option selected="" value="AIII(CIII)">AIII(CIII)</option>
-							<option value="AIV(CIV)">AIV(CIV)</option>
-							<option value="AV">AV</option>
-							<option value="AVI">AVI</option>
-							<option value="AVII">AVII</option>
-						</select>
-						<br>
-
-
-
-						<input id="b" type="number" min="0" step="1" value="300">
-						<br>
-
-						<input id="h" type="number" min="0" step="1" value="400">
-						<br>
-
-						<input id="a" type="number" min="0" step="1" value="40">
-
-
-						<input id="sl1" type="number" min="0" step="1" value="5">
-
-						<input id="dk1" type="number" min="0" step="1" value="18">
-
-						<input id="sl2" type="number" min="0" step="1" value="5">
-
-						<input id="dk2" type="number" min="0" step="1" value="18">
-
-
-						<span class="RB">13</span>
-						<span class="RBT">1</span>
-						<span class="EBT">29000</span>
-						<span class="RS">365</span>
-						<span class="RSC">365</span>
-
-						<span class="L">3.5</span>
-						<span class="LH">30.4</span>
-						<span class="LB">40.5</span>
-						<span class="SSMUYH"> &gt; 28</span>
-						<span class="SSMUYB"> &gt; 28</span>
-
-						<span class="MUYH">1.2</span>
-						<span class="MUYB">1.4</span>
-						<span class="MH">2.4</span>
-						<span class="MB">4.2</span>
-						<i><span class="MHH">2.4</span></i>
-
-						<span class="MBB">4.2</span>
-						<span class="SSM"> ≤ </span>
-
-						<span class="NXCANH">cạnh b</span>
-						<span class="M">4.9</span>
-
-						<span class="E1">32.7</span>
-						<span class="EA">22.7</span>
-						<span class="EE">155.8</span>
-						<span class="E">155.8</span>
-						<span class="EPXILON">0.1</span>
-
-						<span class="SSEPXILON"> ≤ 0.3 </span>
-						<span class="X1">288.5</span>
-						<span class="SSX1"> &gt; </span>
-						<span class="XR">149.9</span>
-						<span class="NXNEN">Tính toán nén Đúng tâm</span>
-
-						<span class="AS">19.4</span>
-						<span class="ABT">25.4</span>
-						<span class="SSABT">≥</span>
-						<span class="AS1">19.4</span>
-						<span class="MUYBT">2.35</span>
-						<span class="SSMUYBT">≤</span>
-						<span class="NXBT">  Bố trí thép cột hợp lý</span>
-
-
-						<input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint " onclick="tinhThep()">
-
-						<input id="btnNhanXet" type="button" value="Nhận xét bố trí" class="btn btn-danger notPrint " onclick="shareFB(nhanXetBoTri)">
-						<input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
-
-
-					</div>
-				</div>
-				<div class="col-md-12">
-
-				</div>
-
-
-			</div>
-
-		</div>
+        </div>
     </section>
 
     <!-- Footer-->
@@ -936,6 +936,9 @@ textarea {
                             html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
                         }
                         $("#macBeTong").html(html_str);
+                        $("#Rb1").html(rs[0].CuongDoNen);
+                        $("#Rbt").html(rs[0].CuongDoKeo);
+                        $("#Ebt").html(rs[0].ModuleDanHoi);
                     }
                 },
                 error: function (rs) {
@@ -960,30 +963,8 @@ textarea {
                             html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
                         }
                         $("#macThepDoc").html(html_str);
-                    }
-                },
-                error: function (rs) {
-                    console.log(rs);
-                    //toastr["error"]("Có lỗi xảy ra trong quá trình lấy danh sách vật liệu. Vui lòng thử lại sau");
-                }
-            });
-
-            $.ajax({
-                type: "POST",
-                async: false,
-                url: '/TinhToan/GetListThepDai',
-                success: function (response) {
-                    var rs = JSON.parse(response);
-                    console.log("data", rs);
-                    if (rs != []) {
-                        var html_str = "";
-                        for (var i = 0; i < rs.length; i++) {
-                            var obj = rs[i];
-
-                            html_str += "<option ";
-                            html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
-                        }
-                        $("#macThepDai").html(html_str);
+                        $("#Rs").html(rs[0].CuongDoNen);
+                        $("#Rsc").html(rs[0].CuongDoKeo);
                     }
                 },
                 error: function (rs) {
@@ -1015,10 +996,6 @@ textarea {
                                 $("#Rs").html(obj.CuongDoNen);
                                 $("#Rsc").html(obj.CuongDoKeo);
                                 break;
-                            case "TDD":
-                                $("#Rsw").html(obj.CuongDoKeo);
-                                $("#Es").html(obj.ModuleDanHoi);
-                                break;
                             default:
                         }
                     }
@@ -1033,22 +1010,18 @@ textarea {
         
 
         $(document).ready(function () {
-            //getListVatLieu();
+            getListVatLieu();
 
-            //$('#macBeTong').on('change', function () {
-            //    var selectedMBT = $(this).find(":selected").val();
-            //    getDetail(selectedMBT, "BT");
-            //});
+            $('#macBeTong').on('change', function () {
+                var selectedMBT = $(this).find(":selected").val();
+                getDetail(selectedMBT, "BT");
+            });
 
-            //$('#macThepDoc').on('change', function () {
-            //    var selectedMTD = $(this).find(":selected").val();
-            //    getDetail(selectedMTD, "TD");
-            //});
+            $('#macThepDoc').on('change', function () {
+                var selectedMTD = $(this).find(":selected").val();
+                getDetail(selectedMTD, "TD");
+            });
 
-            //$('#macThepDai').on('change', function () {
-            //    var selectedMTDD = $(this).find(":selected").val();
-            //    getDetail(selectedMTDD, "TDD");
-            //});
 
             //$("select.macBeTong").change(function () {
             //    var selectedMBT = $(this).children("option:selected").val();
