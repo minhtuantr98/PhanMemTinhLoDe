@@ -184,6 +184,7 @@
     <Content Include="Content\img\dam-bg.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Css\customStyle.css" />
+    <Content Include="Css\htc.css" />
     <Content Include="Css\styleBangTinhToan.css" />
     <Content Include="Css\styles.css" />
     <Content Include="favicon.ico" />
@@ -228,6 +229,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\TinhToan\Index.cshtml" />
+    <Content Include="Views\TinhToan\TinhCotBTCT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

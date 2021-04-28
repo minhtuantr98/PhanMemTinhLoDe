@@ -24,6 +24,11 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public ActionResult TinhCotBTCT()
+        {
+            return View();
+        }
+
         [HttpPost]
         public string GetListBeTong()
         {
