@@ -24,3 +24,9 @@
     padding-right: 0px;
     text-transform: uppercase;
 }
+
+#navbarResponsive>ul>li>ul>li {
+    list-style: none;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #333;
+}

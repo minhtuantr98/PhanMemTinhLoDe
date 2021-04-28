@@ -140,6 +140,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnumErrCode.cs" />
+    <Compile Include="Models\Result_ett.cs" />
+    <Compile Include="Models\TinhThep_ett.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shareds\Constants.cs" />
   </ItemGroup>
