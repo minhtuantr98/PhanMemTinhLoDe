@@ -15,6 +15,42 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="~/Css/styles.css" rel="stylesheet" />
+	<style>
+		#navbarResponsive ul li ul {
+			list-style: none;
+		
+		}
+		#navbarResponsive li ul {
+			display: none;
+			min-width: 350px;
+			position: absolute;
+		}
+		#navbarResponsive li > ul li {
+			width: 100%;
+			border: none;
+			
+			text-align: left;
+		}
+
+			#navbarResponsive li > ul li:first-child a {
+				border-bottom-left-radius: 0px;
+				border-top-left-radius: 0px;
+			}
+
+			#navbarResponsive li > ul li:last-child {
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+				#navbarResponsive li > ul li:last-child a {
+					border-bottom-left-radius: 5px;
+					border-bottom-right-radius: 5px;
+				}
+		/*khi hover thì hiện menu con*/
+		#navbarResponsive li:hover > ul {
+			display: block;
+		}
+    </style>
 </head>
 <body id="page-top">
     <!-- Navigation-->
@@ -55,10 +91,10 @@
         <div class="container">
             <div class="row text-center text-uppercase" style="color: white; padding: 1rem !important;">
                 <div class="col-md-6">
-                    <h2 class="my-3">Tính dầm</h4>
+                    <h2 class="my-3">Tính dầm</h2>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="my-3">Tính cột</h4>
+                    <h2 class="my-3">Tính cột</h2>
                 </div>
             </div>
         </div>
