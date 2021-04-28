@@ -416,6 +416,9 @@
                             html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
                         }
                         $("#macBeTong").html(html_str);
+                        $("#Rb1").html(rs[0].CuongDoNen);
+                        $("#Rbt").html(rs[0].CuongDoKeo);
+                        $("#Ebt").html(rs[0].ModuleDanHoi);
                     }
                 },
                 error: function (rs) {
@@ -440,6 +443,8 @@
                             html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
                         }
                         $("#macThepDoc").html(html_str);
+                        $("#Rs").html(rs[0].CuongDoNen);
+                        $("#Rsc").html(rs[0].CuongDoKeo);
                     }
                 },
                 error: function (rs) {
@@ -464,6 +469,8 @@
                             html_str += "value = '" + obj.ID + "' > " + obj.Name + "</option > ";
                         }
                         $("#macThepDai").html(html_str);
+                        $("#Rsw").html(rs[0].CuongDoKeo);
+                        $("#Es").html(rs[0].ModuleDanHoi);
                     }
                 },
                 error: function (rs) {
@@ -517,7 +524,7 @@
                 $.ajax({
                     type: "POST",
                     url: '/TinhToan/TinhThepDamCN',
-                    data: {'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(),},
+                    data: { 'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(), },
                     success: function (response) {
                         var rs = JSON.parse(response);
                         console.log("data: ", rs);
