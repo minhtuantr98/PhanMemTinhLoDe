@@ -26,544 +26,578 @@
     <link href="~/Css/styles.css" rel="stylesheet" />
     <link href="~/Css/customStyle.css" rel="stylesheet" />
     <link href="~/Css/htc.css" rel="stylesheet" />
-	<style>
-        body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+    <style>
+                body {
+                    padding-top: 50px;
+                    padding-bottom: 20px;
+                }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+                /* Set padding to keep content from hitting the edges */
+                .body-content {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
 
-/* Override the default bootstrap behavior where horizontal description lists
-   will truncate terms that are too long to fit in the left column
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
+                /* Override the default bootstrap behavior where horizontal description lists
+           will truncate terms that are too long to fit in the left column
+        */
+                .dl-horizontal dt {
+                    white-space: normal;
+                }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-    /*height: 31px;*/
-}
+                /* Set width on the form input elements since they're 100% wide by default */
+                input,
+                select,
+                textarea {
+                    max-width: 280px;
+                    /*height: 31px;*/
+                }
 
-.body-bg {
-    /*background-image: url('/files/anh1.jpg');*/
-    width: 650px;
-    height: 1153px;
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    background-size: 100% 100%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
+                .body-bg {
+                    /*background-image: url('/files/anh1.jpg');*/
+                    width: 650px;
+                    height: 1153px;
+                    background-repeat: no-repeat;
+                    background-position: 0% 0%;
+                    background-size: 100% 100%;
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
 
-.body-bg, input, select {
-    font-weight: bold;
-}
-    .body-bg span {
-        color: blue;
-    }
-    .body-bg select, .body-bg input[type=text], .body-bg input[type=number] {
-        color: red;
-    }
+                .body-bg, input, select {
+                    font-weight: bold;
+                }
 
+                    .body-bg span {
+                        color: blue;
+                    }
 
-#CK {
-    position: absolute;
-    top: 79px;
-    left: 165px;
-    text-align: center;
-    height: 22px;
-    width: 134px;
-    border: 0px;
-    background: transparent;
-}
-		#macBeTong {
-			position: absolute;
-			width: 134px;
-			top: 122px;
-			left: 165px;
-			height: 24px;
-		}
-.RB {
-    position: absolute;
-    width: 80px;
-    top: 147px;
-    left: 200px;
-    height: 16px;
-}
-
-.RBT {
-    position: absolute;
-    width: 80px;
-    top: 173px;
-    left: 200px;
-    height: 16px;
-}
-
-.EBT {
-    position: absolute;
-    width: 80px;
-    top: 195px;
-    left: 200px;
-    height: 16px;
-}
-		#macThepDoc {
-			position: absolute;
-			width: 134px;
-			top: 218px;
-			left: 165px;
-			height: 24px;
-		}
-.RS {
-    position: absolute;
-    width: 80px;
-    top: 243px;
-    left: 196px;
-    height: 16px;
-}
-
-.RSC {
-    position: absolute;
-    width: 80px;
-    top: 266px;
-    left: 196px;
-    height: 16px;
-}
-#b {
-    position: absolute;
-    width: 70px;
-    top: 307px;
-    left: 196px;
-    height: 22px;
-    border: 0px;
-    background: transparent;
-}
-#h {
-    position: absolute;
-    width: 70px;
-    top: 330px;
-    left: 196px;
-    height: 22px;
-    border: 0px;
-    background: transparent;
-}
-
-#a {
-    position: absolute;
-    width: 70px;
-    top: 353px;
-    left: 196px;
-    height: 22px;
-    border: 0px;
-    background: transparent;
-}
-
-#hesomuy {
-    position: absolute;
-    width: 59px;
-    top: 330px;
-    left: 454px;
-    height: 22px;
-    border: 0px;
-    background: transparent;
-}
-
-.L {
-    position: absolute;
-    width: 59px;
-    top: 354px;
-    left: 454px;
-    height: 16px;
-    border: 0px;
-    background: transparent;
-}
-
-#tang {
-    position: absolute;
-    top: 476px;
-    left: 19px;
-    width: 120px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#phantu {
-    position: absolute;
-    top: 476px;
-    left: 138px;
-    width: 59px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#chieudai {
-    position: absolute;
-    top: 476px;
-    left: 198px;
-    width: 69px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#vitri {
-    position: absolute;
-    top: 476px;
-    left: 267px;
-    width: 60px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#tohop {
-    position: absolute;
-    top: 476px;
-    left: 328px;
-    width: 126px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#m2 {
-    position: absolute;
-    top: 476px;
-    left: 454px;
-    width: 59px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#m3 {
-    position: absolute;
-    top: 476px;
-    left: 513px;
-    width: 64px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
-
-#n {
-    position: absolute;
-    top: 476px;
-    left: 579px;
-    width: 57px;
-    text-align: center;
-    height: 26px;
-    border: 0px;
-    background: transparent;
-}
+                    .body-bg select, .body-bg input[type=text], .body-bg input[type=number] {
+                        color: red;
+                    }
 
 
-.LH {
-    position: absolute;
-    top: 574px;
-    left: 138px;
-    width: 50px;
-    height: 21px;
-}
-.SSMUYH {
-    position: absolute;
-    top: 574px;
-    left: 198px;
-    width: 69px;
-    height: 21px;
-}
-.MUYH {
-    position: absolute;
-    top: 574px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-}
+                #CK {
+                    position: absolute;
+                    top: 79px;
+                    left: 165px;
+                    text-align: center;
+                    height: 22px;
+                    width: 134px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-.LB {
-    position: absolute;
-    top: 619px;
-    left: 138px;
-    width: 50px;
-    height: 21px;
-}
-.SSMUYB {
-    position: absolute;
-    top: 619px;
-    left: 198px;
-    width: 69px;
-    height: 21px;
-}
-.MUYB {
-    position: absolute;
-    top: 619px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-}
+                #macBeTong {
+                    position: absolute;
+                    width: 134px;
+                    top: 122px;
+                    left: 165px;
+                    height: 24px;
+                }
 
-.MH {
-    position: absolute;
-    top: 666px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-}
-.MB {
-    position: absolute;
-    top: 690px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-}
+                .RB {
+                    position: absolute;
+                    width: 80px;
+                    top: 147px;
+                    left: 200px;
+                    height: 16px;
+                }
 
+                .RBT {
+                    position: absolute;
+                    width: 80px;
+                    top: 173px;
+                    left: 200px;
+                    height: 16px;
+                }
 
-.MHH {
-    position: absolute;
-    top: 734px;
-    left: 138px;
-    width: 50px;
-    height: 21px;
-}
-.SSM {
-    position: absolute;
-    top: 734px;
-    left: 221px;
-    width: 50px;
-    height: 21px;
-}
-.MBB {
-    position: absolute;
-    top: 734px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
+                .EBT {
+                    position: absolute;
+                    width: 80px;
+                    top: 195px;
+                    left: 200px;
+                    height: 16px;
+                }
 
-.NXCANH {
-    position: absolute;
-    top: 758px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.M {
-    position: absolute;
-    top: 781px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.E1 {
-    position: absolute;
-    top: 805px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.EA {
-    position: absolute;
-    top: 830px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.EE {
-    position: absolute;
-    top: 852px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.E {
-    position: absolute;
-    top: 875px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
+                #macThepDoc {
+                    position: absolute;
+                    width: 134px;
+                    top: 218px;
+                    left: 165px;
+                    height: 24px;
+                }
 
-.EPXILON {
-    position: absolute;
-    top: 899px;
-    left: 138px;
-    width: 50px;
-    height: 21px;
-}
+                .RS {
+                    position: absolute;
+                    width: 80px;
+                    top: 243px;
+                    left: 196px;
+                    height: 16px;
+                }
 
-.SSEPXILON {
-    position: absolute;
-    top: 899px;
-    left: 221px;
-    width: 50px;
-    height: 21px;
-}
+                .RSC {
+                    position: absolute;
+                    width: 80px;
+                    top: 266px;
+                    left: 196px;
+                    height: 16px;
+                }
 
-.NXNEN {
-    position: absolute;
-    top: 955px;
-    left: 100px;
-    width: 400px;
-    height: 21px;
-}
-.X1 {
-    position: absolute;
-    top: 920px;
-    left: 138px;
-    width: 50px;
-    height: 21px;
-}
-.SSX1 {
-    position: absolute;
-    top: 920px;
-    left: 221px;
-    width: 50px;
-    height: 21px;
-}
-.XR {
-    position: absolute;
-    top: 920px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
+                #b {
+                    position: absolute;
+                    width: 70px;
+                    top: 307px;
+                    left: 196px;
+                    height: 22px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-.AS {
-    position: absolute;
-    top: 974px;
-    left: 328px;
-    width: 60px;
-    height: 15px;
+                #h {
+                    position: absolute;
+                    width: 70px;
+                    top: 330px;
+                    left: 196px;
+                    height: 22px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-}
-#sl1 {
-    position: absolute;
-    top: 1000px;
-    left: 280px;
-    width: 30px;
-    height: 21px;
-    border: 0px;
-    background: transparent;
-}
-#dk1 {
-    position: absolute;
-    top: 1000px;
-    left: 328px;
-    width: 40px;
-    height: 21px;
-    border: 0px;
-    background: transparent;
-}
-#sl2 {
-    position: absolute;
-    top: 1000px;
-    left: 400px;
-    width: 30px;
-    height: 21px;
-    border: 0px;
-    background: transparent;
-}
+                #a {
+                    position: absolute;
+                    width: 70px;
+                    top: 353px;
+                    left: 196px;
+                    height: 22px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-#dk2 {
-    position: absolute;
-    top: 1000px;
-    left: 460px;
-    width: 40px;
-    height: 21px;
-    border: 0px;
-    background: transparent;
-}
-.ABT {
-    position: absolute;
-    top: 1030px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
+                #hesomuy {
+                    position: absolute;
+                    width: 59px;
+                    top: 330px;
+                    left: 454px;
+                    height: 22px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-.SSABT {
-    position: absolute;
-    top: 1030px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-    text-align: center;
-}
-.AS1 {
-    position: absolute;
-    top: 1030px;
-    left: 513px;
-    width: 65px;
-    height: 21px;
+                #e0 {
+                    position: absolute;
+                    width: 59px;
+                    top: 330px;
+                    left: 575px;
+                    height: 22px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-}
+                .L {
+                    position: absolute;
+                    width: 59px;
+                    top: 354px;
+                    left: 454px;
+                    height: 16px;
+                    border: 0px;
+                    background: transparent;
+                }
 
-.MUYBT {
-    position: absolute;
-    top: 1056px;
-    left: 328px;
-    width: 60px;
-    height: 21px;
-}
-.SSMUYBT {
-    position: absolute;
-    top: 1056px;
-    left: 388px;
-    width: 65px;
-    height: 21px;
-    text-align: center;
-}
-.NXBT {
-    position: absolute;
-    top: 1082px;
-    left: 110px;
-    width: 300px;
-    height: 21px;
-}
+                #tang {
+                    position: absolute;
+                    top: 476px;
+                    left: 19px;
+                    width: 120px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #phantu {
+                    position: absolute;
+                    top: 476px;
+                    left: 138px;
+                    width: 59px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+        #chieudai {
+            position: absolute;
+            top: 476px;
+            left: 198px;
+            width: 69px;
+            text-align: center;
+            height: 26px;
+            border: 0px;
+            background: transparent;
+        }
+
+        #vitri {
+            position: absolute;
+            top: 476px;
+            left: 267px;
+            width: 60px;
+            text-align: center;
+            height: 26px;
+            border: 0px;
+            background: transparent;
+        }
+
+                #tohop {
+                    position: absolute;
+                    top: 476px;
+                    left: 328px;
+                    width: 126px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #m2 {
+                    position: absolute;
+                    top: 476px;
+                    left: 454px;
+                    width: 59px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #m3 {
+                    position: absolute;
+                    top: 476px;
+                    left: 513px;
+                    width: 64px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #n {
+                    position: absolute;
+                    top: 476px;
+                    left: 579px;
+                    width: 57px;
+                    text-align: center;
+                    height: 26px;
+                    border: 0px;
+                    background: transparent;
+                }
 
 
+                .LH {
+                    position: absolute;
+                    top: 574px;
+                    left: 138px;
+                    width: 50px;
+                    height: 21px;
+                }
 
-#btnTinhToan {
-    position: absolute;
-    top: 512px;
-    left: 403px;
+                .SSMUYH {
+                    position: absolute;
+                    top: 574px;
+                    left: 198px;
+                    width: 69px;
+                    height: 21px;
+                }
 
-}
-#btnNhanXet {
-    position: absolute;
-    top: 512px;
-    left: 512px;
-}
+                .MUYH {
+                    position: absolute;
+                    top: 574px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                }
 
-#btnPrint {
-    position: absolute;
-    top: 512px;
-    left: 324px;
-    width: 70px;
+                .LB {
+                    position: absolute;
+                    top: 619px;
+                    left: 138px;
+                    width: 50px;
+                    height: 21px;
+                }
 
-}
+                .SSMUYB {
+                    position: absolute;
+                    top: 619px;
+                    left: 198px;
+                    width: 69px;
+                    height: 21px;
+                }
+
+                .MUYB {
+                    position: absolute;
+                    top: 619px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                }
+
+                .MH {
+                    position: absolute;
+                    top: 666px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                }
+
+                .MB {
+                    position: absolute;
+                    top: 690px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                }
+
+
+                .MHH {
+                    position: absolute;
+                    top: 734px;
+                    left: 138px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .SSM {
+                    position: absolute;
+                    top: 734px;
+                    left: 221px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .MBB {
+                    position: absolute;
+                    top: 734px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .NXCANH {
+                    position: absolute;
+                    top: 758px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .M {
+                    position: absolute;
+                    top: 781px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .E1 {
+                    position: absolute;
+                    top: 805px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .EA {
+                    position: absolute;
+                    top: 830px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .EE {
+                    position: absolute;
+                    top: 852px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .E {
+                    position: absolute;
+                    top: 875px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .EPXILON {
+                    position: absolute;
+                    top: 899px;
+                    left: 138px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .SSEPXILON {
+                    position: absolute;
+                    top: 899px;
+                    left: 221px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .NXNEN {
+                    position: absolute;
+                    top: 955px;
+                    left: 100px;
+                    width: 400px;
+                    height: 21px;
+                }
+
+                .X1 {
+                    position: absolute;
+                    top: 920px;
+                    left: 138px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .SSX1 {
+                    position: absolute;
+                    top: 920px;
+                    left: 221px;
+                    width: 50px;
+                    height: 21px;
+                }
+
+                .XR {
+                    position: absolute;
+                    top: 920px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .AS {
+                    position: absolute;
+                    top: 974px;
+                    left: 328px;
+                    width: 60px;
+                    height: 15px;
+                }
+
+                #sl1 {
+                    position: absolute;
+                    top: 1000px;
+                    left: 280px;
+                    width: 30px;
+                    height: 21px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #dk1 {
+                    position: absolute;
+                    top: 1000px;
+                    left: 328px;
+                    width: 40px;
+                    height: 21px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #sl2 {
+                    position: absolute;
+                    top: 1000px;
+                    left: 400px;
+                    width: 30px;
+                    height: 21px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                #dk2 {
+                    position: absolute;
+                    top: 1000px;
+                    left: 460px;
+                    width: 40px;
+                    height: 21px;
+                    border: 0px;
+                    background: transparent;
+                }
+
+                .ABT {
+                    position: absolute;
+                    top: 1030px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .SSABT {
+                    position: absolute;
+                    top: 1030px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                    text-align: center;
+                }
+
+                .AS1 {
+                    position: absolute;
+                    top: 1030px;
+                    left: 513px;
+                    width: 65px;
+                    height: 21px;
+                }
+
+                .MUYBT {
+                    position: absolute;
+                    top: 1056px;
+                    left: 328px;
+                    width: 60px;
+                    height: 21px;
+                }
+
+                .SSMUYBT {
+                    position: absolute;
+                    top: 1056px;
+                    left: 388px;
+                    width: 65px;
+                    height: 21px;
+                    text-align: center;
+                }
+
+                .NXBT {
+                    position: absolute;
+                    top: 1082px;
+                    left: 110px;
+                    width: 300px;
+                    height: 21px;
+                }
 
 
 
-	</style>
+                #btnTinhToan {
+                    position: absolute;
+                    top: 512px;
+                    left: 403px;
+                }
+
+                #btnNhanXet {
+                    position: absolute;
+                    top: 512px;
+                    left: 512px;
+                }
+
+                #btnPrint {
+                    position: absolute;
+                    top: 512px;
+                    left: 324px;
+                    width: 70px;
+                }
+    </style>
 </head>
 
 <body id="page-top">
@@ -589,6 +623,7 @@ textarea {
                         <input type="text" id="phantu" value="C12">
                         <input type="text" id="chieudai" value="5">
                         <input type="text" id="hesomuy" value="0.7">
+                        <input type="text" id="e0" value="0.3">
                         <input type="text" id="vitri" value="0">
                         <input type="text" id="tohop" value="TH1">
                         <input type="text" id="m2" value="-3">
@@ -659,7 +694,7 @@ textarea {
                         <span class="X1">288.5</span>
                         <span class="SSX1"> &gt; </span>
                         <span class="XR">149.9</span>
-                        <span class="NXNEN">Tính toán nén Đúng tâm</span>
+                        <span class="NXNEN" id="NXNEN">Tính toán nén Đúng tâm</span>
 
                         <span class="AS">19.4</span>
                         <span class="ABT">25.4</span>
@@ -670,7 +705,7 @@ textarea {
                         <span class="NXBT">  Bố trí thép cột hợp lý</span>
 
 
-                        <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint " onclick="tinhThep()">
+                        <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint " onclick="tinhThepCot()">
 
                         <input id="btnNhanXet" type="button" value="Nhận xét bố trí" class="btn btn-danger notPrint " onclick="shareFB(nhanXetBoTri)">
                         <input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
@@ -694,7 +729,7 @@ textarea {
 
             <link rel="stylesheet" href="/Style/htsCot.css">
             <div class="row">
-                
+
                 <div class="col-md-12">
 
                 </div>
@@ -1007,7 +1042,30 @@ textarea {
             });
         }
 
-        
+        function tinhThepCot() {
+            //alert("Tính dầm chữ nhật");
+            var l = $("#chieudai").val();
+            $.ajax({
+                type: "POST",
+                url: '/TinhToan/TinhThepCot',
+                data: { 'l': $("#chieudai").val(), 'b': $("#b").val(), 'wuy': $("#hesomuy").val(), 'my': $("#m2").val(), 'mx': $("#m3").val(), 'h': $("#h").val(), 'e0': $("#e0").val(), 'N': $("#n").val(), 'Rb1': $("#Rb1").html(), 'Rs': $("#Rs").html(), 'a': $("#a").val()},
+                success: function (response) {
+                    var rs = JSON.parse(response);
+                    console.log("data: ", rs);
+                    if (rs.ErrCode == 1) {
+                        
+                        $("#NXNEN").html(rs.Data.Comment);
+                    } else {
+                        if (rs.ErrCode == 2) {
+                            alert(rs.Data.Comment);
+                        }
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra trong quá trình tính thép cột. Vui lòng thử lại sau");
+                }
+            });
+        }
 
         $(document).ready(function () {
             getListVatLieu();

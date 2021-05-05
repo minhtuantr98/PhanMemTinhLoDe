@@ -13,9 +13,9 @@ namespace WebApplication1.Models
         public double Ar { get; set; }
         public double Anbt { get; set; }
         public double Akbt { get; set; }
-        public string Comment  { get; set; }
-        public string ChiuNen  { get; set; }
-        public string ChiuKeo  { get; set; }
+        public string Comment { get; set; }
+        public string ChiuNen { get; set; }
+        public string ChiuKeo { get; set; }
 
         public TinhThep_ett()
         {
@@ -30,4 +30,7 @@ namespace WebApplication1.Models
             ChiuKeo = string.Empty;
         }
     }
+
+    public class TinhThepCot_ett : TinhThep_ett {
+        }
 }

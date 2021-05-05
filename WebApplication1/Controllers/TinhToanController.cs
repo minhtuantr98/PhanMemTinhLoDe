@@ -244,5 +244,93 @@ namespace WebApplication1.Controllers
 
         //    return string.Empty;
         //}
+
+        [HttpPost]
+        public string TinhThepCot()
+        {
+            Result_ett<TinhThep_ett> rs = new Result_ett<TinhThep_ett>();
+            TinhThep_ett tinhThep_Ett = new TinhThep_ett();
+
+            string l_str = Request["l"];
+            string b_str = Request["b"];
+            string wuy_str = Request["wuy"];
+            string mx_str = Request["mx"];
+            string my_str = Request["my"];
+            string h_str = Request["h"];
+            string e0_str = Request["e0"];
+            string a_str = Request["a"];
+            string N_str = Request["N"];
+            string Rb1_str = Request["Rb1"];
+            string Rs_str = Request["Rs"];
+
+            double l = float.Parse(l_str);
+            double b = float.Parse(b_str);
+            double wuy = float.Parse(wuy_str);
+            double mx = float.Parse(mx_str);
+            double my = float.Parse(my_str);
+            double h = float.Parse(h_str);
+            double a = float.Parse(a_str);
+
+            double l0 = wuy * l;
+            double lambda = l0 / 0.288 * b;
+            byte n = 0;
+
+
+            if (lambda < 28)
+            {
+                n = 1;
+                double mx1 = n * mx;
+                double my1 = n * my;
+
+                double cx = b;
+                double cy = h;
+
+                double m1 = 0;
+                double m2 = 0;
+
+                if ((mx1 / cx) < (my1 / cy))
+                {
+                    m1 = mx1;
+                    m2 = my1;
+                }
+                else
+                {
+                    m1 = my1;
+                    m2 = mx1;
+                }
+
+                double e0 = double.Parse(e0_str);
+                double h0 = h - a;
+                if ((e0 / h0) < 0.3)
+                {
+                    tinhThep_Ett.Comment = "Tính toán theo cấu kiện chịu nén đúng tâm";
+                }
+                else
+                {
+                    double Rb1 = double.Parse(Rb1_str);
+                    double N = double.Parse(N_str);
+                    double Rs = double.Parse(Rs_str);
+                    double w = 0.85 - 0.008 * Rb1;
+                    double Cr = w / (1 + (Rs / 500) * (1 - (w / 1.1)));
+                    if ((N / (Rb1 * b)) > (Cr * h0))
+                    {
+                        tinhThep_Ett.Comment = "Tính toán theo cấu kiện chịu lệch tâm bé";
+                    }
+                    else
+                    {
+                        tinhThep_Ett.Comment = "Tính toán theo cấu kiện chịu lệch tâm lớn";
+                    }
+                }
+                rs.ErrCode = EnumErrCode.Success;
+            }
+            else
+            {
+                rs.ErrCode = EnumErrCode.Empty;
+                tinhThep_Ett.Comment = "Tính lại n";
+            }
+            
+            rs.Data = tinhThep_Ett;
+            return JsonConvert.SerializeObject(rs);
+        }
     }
 }
