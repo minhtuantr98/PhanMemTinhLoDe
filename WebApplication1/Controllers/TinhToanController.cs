@@ -19,7 +19,12 @@ namespace WebApplication1.Controllers
             db = new DatabaseDataContext();
         }
 
-        public ActionResult Index()
+        public ActionResult TinhDamCN()
+        {
+            return View();
+        }
+
+        public ActionResult TinhDamCT()
         {
             return View();
         }
