@@ -183,8 +183,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\cot-bg-002.jpg" />
     <Content Include="Content\img\dam-bg-002.jpg" />
     <Content Include="Content\img\dam-bg.jpg" />
+    <Content Include="Content\img\dam-chu-t.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Css\customStyle.css" />
     <Content Include="Css\htc.css" />
@@ -233,6 +235,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\TinhToan\Index.cshtml" />
     <Content Include="Views\TinhToan\TinhCotBTCT.cshtml" />
+    <Content Include="Views\TinhToan\TinhDamCN.cshtml" />
+    <Content Include="Views\TinhToan\TinhDamChuT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

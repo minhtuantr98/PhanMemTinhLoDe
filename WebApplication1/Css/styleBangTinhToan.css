@@ -107,13 +107,21 @@ select {
 #beRongCanh {
 	position: absolute;
 	max-width: 280px;
-	top: 427px;
-	left: 200px;
+	top: 366px;
+	left: 550px;
 	width: 76px;
 	border: 0px;
 	background: transparent;
 }
-
+#chieuCaoCanh {
+	position: absolute;
+	max-width: 280px;
+	top: 387px;
+	left: 550px;
+	width: 76px;
+	border: 0px;
+	background: transparent;
+}
 
 #Un {
 	position: absolute;
