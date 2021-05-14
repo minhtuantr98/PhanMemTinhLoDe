@@ -663,46 +663,46 @@
                         <span class="RB" id="Rb1">0</span>
                         <span class="RBT" id="Rbt">0</span>
                         <span class="EBT" id="Ebt">0</span>
-                        <span class="RS" id="Rs">0</span>
+                        <span class="RS" id="RS">0</span>
                         <span class="RSC" id="Rsc">0</span>
 
                         <span class="L">3.5</span>
-                        <span class="LH">30.4</span>
-                        <span class="LB">40.5</span>
+                        <span class="LH" id="LH">30.4</span>
+                        <span class="LB" id="LB">40.5</span>
                         <span class="SSMUYH"> &gt; 28</span>
                         <span class="SSMUYB"> &gt; 28</span>
 
                         <span class="MUYH">1.2</span>
                         <span class="MUYB">1.4</span>
-                        <span class="MH">2.4</span>
-                        <span class="MB">4.2</span>
+                        <span class="MH" id="MH">2.4</span>
+                        <span class="MB" id="MB">4.2</span>
                         <i><span class="MHH">2.4</span></i>
 
                         <span class="MBB">4.2</span>
                         <span class="SSM"> ≤ </span>
 
-                        <span class="NXCANH">cạnh b</span>
-                        <span class="M">4.9</span>
+                        <span class="NXCANH" id="NXCANH">cạnh b</span>
+                        <span class="M" id="M">4.9</span>
 
-                        <span class="E1">32.7</span>
-                        <span class="EA">22.7</span>
-                        <span class="EE">155.8</span>
-                        <span class="E">155.8</span>
-                        <span class="EPXILON">0.1</span>
+                        <span class="E1" id="E1">32.7</span>
+                        <span class="EA" id="EA">22.7</span>
+                        <span class="EE" id="EE">155.8</span>
+                        <span class="E" id="E">155.8</span>
+                        <span class="EPXILON" id="EPXILON">0.1</span>
 
-                        <span class="SSEPXILON"> ≤ 0.3 </span>
-                        <span class="X1">288.5</span>
-                        <span class="SSX1"> &gt; </span>
-                        <span class="XR">149.9</span>
+                        <span class="SSEPXILON" id="SSEPXILON"> ≤ 0.3 </span>
+                        <span class="X1" id="X1">288.5</span>
+                        <span class="SSX1" id="SSX1"> &gt; </span>
+                        <span class="XR" id="XR">149.9</span>
                         <span class="NXNEN" id="NXNEN">Tính toán nén Đúng tâm</span>
 
-                        <span class="AS">19.4</span>
-                        <span class="ABT">25.4</span>
-                        <span class="SSABT">≥</span>
-                        <span class="AS1">19.4</span>
-                        <span class="MUYBT">2.35</span>
-                        <span class="SSMUYBT">≤</span>
-                        <span class="NXBT">  Bố trí thép cột hợp lý</span>
+                        <span class="AS" id="AS">19.4</span>
+                        <span class="ABT" id="ABT">25.4</span>
+                        <span class="SSABT" id="SSABT">≥</span>
+                        <span class="AS1" id="AS1">19.4</span>
+                        <span class="MUYBT" id="MUYBT">2.35</span>
+                        <span class="SSMUYBT" id="SSMUYBT">≤</span>
+                        <span class="NXBT" id="NXBT">  Bố trí thép cột hợp lý</span>
 
 
                         <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint " onclick="tinhThepCot()">
@@ -1048,13 +1048,36 @@
             $.ajax({
                 type: "POST",
                 url: '/TinhToan/TinhThepCot',
-                data: { 'l': $("#chieudai").val(), 'b': $("#b").val(), 'wuy': $("#hesomuy").val(), 'my': $("#m2").val(), 'mx': $("#m3").val(), 'h': $("#h").val(), 'e0': $("#e0").val(), 'N': $("#n").val(), 'Rb1': $("#Rb1").html(), 'Rs': $("#Rs").html(), 'a': $("#a").val()},
+                data: { 'l': $("#chieudai").val(), 'b': $("#b").val(), 'wuy': $("#hesomuy").val(), 'my': $("#m2").val(), 'mx': $("#m3").val(), 'h': $("#h").val(), 'e0': $("#e0").val(), 'N': $("#n").val(), 'Rb1': $("#Rb1").html(), 'Rs': $("#RS").html(), 'a': $("#a").val(), 'dk1': $("#dk1").val(), 'dk2': $("#dk2").val(), 'sl1': $("#sl1").val(), 'sl2': $("#sl2").val()},
                 success: function (response) {
                     var rs = JSON.parse(response);
                     console.log("data: ", rs);
                     if (rs.ErrCode == 1) {
                         
                         $("#NXNEN").html(rs.Data.Comment);
+                        $("#LH").html(rs.Data.Lo_ih.toFixed(2));
+                        $("#LB").html(rs.Data.Lo_ib.toFixed(2));
+                        $("#MH").html(rs.Data.MH.toFixed(1));
+                        $("#MB").html(rs.Data.MB.toFixed(1));
+                        $("#NXCANH").html(rs.Data.TinhTheoPhuong);
+                        $("#M").html(rs.Data.Mx);
+                        $("#E1").html(rs.Data.E1.toFixed(1));
+                        $("#EA").html(rs.Data.Ea.toFixed(1));
+                        $("#E0").html(rs.Data.E0.toFixed(1));
+                        $("#E").html(rs.Data.E.toFixed(1));
+                        $("#EPXILON").html(rs.Data.Epxilon.toFixed(1));
+                        $("#SSEPXILON").html(rs.Data.SSEPXILON);
+                        $("#X1").html(rs.Data.X1.toFixed(1));
+                        $("#SSX1").html(rs.Data.SSX1);
+                        $("#XR").html(rs.Data.XR.toFixed(1));
+                        $("#AS").html(rs.Data.As.toFixed(1));
+                        $("#AS1").html(rs.Data.As.toFixed(1));
+                        $("#ABT").html(rs.Data.Anbt.toFixed(1));
+                        $("#MUYBT").html(rs.Data.Muy.toFixed(1));
+                        $("#NXBT").html(rs.Data.MuyCmt);
+                        $("#SSMUYBT").html(rs.Data.SSMuyCmt);
+                        $("#SSABT").html(rs.Data.SSABT);
+
                     } else {
                         if (rs.ErrCode == 2) {
                             alert(rs.Data.Comment);

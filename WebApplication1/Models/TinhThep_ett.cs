@@ -32,5 +32,52 @@ namespace WebApplication1.Models
     }
 
     public class TinhThepCot_ett : TinhThep_ett {
+        public double Lo_ih { get; set; }
+        public double Lo_ib { get; set; }
+        public double MuyH { get; set; }
+        public double MuyB { get; set; }
+        public double MH { get; set; }
+        public double MB { get; set; }
+        public string TinhTheoPhuong { get; set; }
+        public double Mx { get; set; }
+        public double E1 { get; set; }
+        public double Ea { get; set; }
+        public double E0 { get; set; }
+        public double E { get; set; }
+        public double Epxilon { get; set; }
+        public string SSEpxilon { get; set; }
+        public double X1 { get; set; }
+        public string SSX1 { get; set; }
+        public double XR { get; set; }
+        public double Muy { get; set; }
+        public string MuyCmt { get; set; }
+        public string SSMuyCmt { get; set; }
+        public string SSABT { get; set; }
+
+        public TinhThepCot_ett()
+        {
+            Lo_ih = 0;
+            Lo_ib = 0;
+            MuyH = 0;
+            MuyB = 0;
+            MH = 0;
+            MB = 0;
+            TinhTheoPhuong = string.Empty;
+            Mx = 0;
+            E1 = 0;
+            Ea = 0;
+            E0 = 0;
+            E = 0;
+            Epxilon = 0;
+            SSEpxilon = string.Empty;
+            X1 = 0;
+            SSX1 = string.Empty;
+            XR = 0;
+            Muy = 0;
+            MuyCmt = string.Empty;
+            SSMuyCmt = string.Empty;
+            SSABT = string.Empty;
         }
+
+    }
 }
