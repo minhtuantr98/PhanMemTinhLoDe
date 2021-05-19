@@ -16,6 +16,16 @@ namespace WebApplication1.Models
         public string Comment { get; set; }
         public string ChiuNen { get; set; }
         public string ChiuKeo { get; set; }
+        public string CuongDo { get; set; }
+        public double Qnc { get; set; }
+        public string SSQnc { get; set; }
+        public double Q { get; set; }
+        public double Ad { get; set; }
+        public double Stt { get; set; }
+        public double Sct { get; set; }
+        public double Smax { get; set; }
+        public double S { get; set; }
+        public string SSAmAr { get; set; }
 
         public TinhThep_ett()
         {
@@ -25,9 +35,18 @@ namespace WebApplication1.Models
             Ar = 0;
             Anbt = 0;
             Akbt = 0;
+            Qnc = 0;
+            Q = 0;
+            Ad = 0;
+            Stt = 0;
+            Smax = 0;
+            S = 0;
             Comment = string.Empty;
             ChiuNen = string.Empty;
             ChiuKeo = string.Empty;
+            CuongDo = string.Empty;
+            SSQnc = string.Empty;
+            SSAmAr = string.Empty;
         }
     }
 

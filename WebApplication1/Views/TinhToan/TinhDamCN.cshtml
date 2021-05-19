@@ -58,40 +58,40 @@
                                 <select id="macBeTong" class="macBeTong">
 
                                     @*<option value="B7,5">B7,5</option>
-                                        <option value="B10">B10</option>
-                                        <option value="B12,5">B12,5</option>
-                                        <option value="B15(M200)">B15(M200)</option>
-                                        <option value="B20(M250)">B20(M250)</option>
-                                        <option selected="" value="B22,5(M300)">B22,5(M300)</option>
-                                        <option value="B25(M350)">B25(M350)</option>
-                                        <option value="B30(M400)">B30(M400)</option>
-                                        <option value="B35(M450)">B35(M450)</option>
-                                        <option value="B40(M500)">B40(M500)</option>
-                                        <option value="B45(M600)">B45(M600)</option>*@
+            <option value="B10">B10</option>
+            <option value="B12,5">B12,5</option>
+            <option value="B15(M200)">B15(M200)</option>
+            <option value="B20(M250)">B20(M250)</option>
+            <option selected="" value="B22,5(M300)">B22,5(M300)</option>
+            <option value="B25(M350)">B25(M350)</option>
+            <option value="B30(M400)">B30(M400)</option>
+            <option value="B35(M450)">B35(M450)</option>
+            <option value="B40(M500)">B40(M500)</option>
+            <option value="B45(M600)">B45(M600)</option>*@
                                 </select>
                                 <br>
 
 
                                 <select id="macThepDoc" class="macThepDoc" onchange="tinhToan()">
                                     @*<option value="AI (CI)">AI (CI)</option>
-                                        <option value="AII(CII)">AII(CII)</option>
-                                        <option selected="" value="AIII(CIII)">AIII(CIII)</option>
-                                        <option value="AIV(CIV)">AIV(CIV)</option>
-                                        <option value="AV">AV</option>
-                                        <option value="AVI">AVI</option>
-                                        <option value="AVII">AVII</option>*@
+            <option value="AII(CII)">AII(CII)</option>
+            <option selected="" value="AIII(CIII)">AIII(CIII)</option>
+            <option value="AIV(CIV)">AIV(CIV)</option>
+            <option value="AV">AV</option>
+            <option value="AVI">AVI</option>
+            <option value="AVII">AVII</option>*@
                                 </select>
                                 <br>
 
 
                                 <select id="macThepDai" onchange="tinhToan()">
                                     @*<option selected="" value="AI (CI)">AI (CI)</option>
-                                        <option value="AII(CII)">AII(CII)</option>
-                                        <option value="AIII(CIII)">AIII(CIII)</option>
-                                        <option value="AIV(CIV)">AIV(CIV)</option>
-                                        <option value="AV">AV</option>
-                                        <option value="AVI">AVI</option>
-                                        <option value="AVII">AVII</option>*@
+            <option value="AII(CII)">AII(CII)</option>
+            <option value="AIII(CIII)">AIII(CIII)</option>
+            <option value="AIV(CIV)">AIV(CIV)</option>
+            <option value="AV">AV</option>
+            <option value="AVI">AVI</option>
+            <option value="AVII">AVII</option>*@
                                 </select>
                                 <br>
 
@@ -145,15 +145,16 @@
                                 <span class="Akbt" id="Akbt">7.6</span>
                                 <i><span class="NhanXetChiuKeo" id="NhanXetChiuKeo"></span></i>
 
-                                <span class="Qnc">39.5</span>
-                                <span class="Q">1.2</span>
+                                <span class="Qnc" id="Qnc">39.5</span>
+                                <span class="SSQnc" id="SSQnc"></span>
+                                <span class="Q" id="Q">1.2</span>
 
-                                <span class="Ad">0.57</span>
-                                <span class="Stt">150</span>
+                                <span class="Ad" id="Ad"></span>
+                                <span class="Stt" id="Stt">150</span>
 
-                                <span class="Sct">375</span>
-                                <span class="Smax">1058</span>
-                                <span class="S">150</span>
+                                <span class="Sct" id="Sct">375</span>
+                                <span class="Smax" id="Smax">1058</span>
+                                <span class="S" id="S">150</span>
                                 <span class="Rb1" id="Rb1">0</span>
                                 <span class="Rbt" id="Rbt">0</span>
 
@@ -161,8 +162,9 @@
                                 <span class="Rs" id="Rs">0</span>
                                 <span class="Rsc" id="Rsc">0</span>
                                 <span class="Rsw" id="Rsw">0</span>
+                                <i><span class="NhanXetCuongDo" id="NhanXetCuongDo"> abcxyz</span></i>
                                 @*<span class="Es">0</span>*@
-                                <span class="soSanhAlphaAmAr">≤</span>
+                                <span class="soSanhAlphaAmAr" id="soSanhAlphaAmAr">≤</span>
                                 <span class="Es" id="Es">0</span>
                                 <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">
                                 @*<input id="btnNhanXet" type="button" value="Nhận xét" class="btn btn-danger notPrint" onclick="shareFB(nhanXetBoTri)">*@
@@ -519,34 +521,40 @@
 
         function tinhThep() {
             var M = Number($("#thongSoNoiNuc5").val());
-            if (M < 0) {
-                //alert("Tính dầm chữ nhật");
-                $.ajax({
-                    type: "POST",
-                    url: '/TinhToan/TinhThepDamCN',
-                    data: { 'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(), },
-                    success: function (response) {
-                        var rs = JSON.parse(response);
-                        console.log("data: ", rs);
-                        if (rs.ErrCode == 1) {
-                            $("#Am").html(rs.Data.Am.toFixed(2));
-                            $("#Ar").html(rs.Data.Ar.toFixed(2));
-                            $("#nhanXet").html(rs.Data.Comment);
-                            $("#Ak").html(rs.Data.As.toFixed(2));
-                            $("#An").html(rs.Data.As1.toFixed(2));
-                            $("#Anbt").html(rs.Data.Anbt.toFixed(2));
-                            $("#Akbt").html(rs.Data.Akbt.toFixed(2));
-                            $("#NhanXetChiuNen").html(rs.Data.ChiuNen);
-                            $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo);
-                        }
-                    },
-                    error: function () {
-                        alert("Có lỗi xảy ra trong quá trình tính thép. Vui lòng thử lại sau");
+            //alert("Tính dầm chữ nhật");
+            $.ajax({
+                type: "POST",
+                url: '/TinhToan/TinhThepDamCN',
+                data: { 'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(), 'Rbt': $("#Rbt").html(), 'Q': $("#thongSoNoiNuc6").val(), 'Rsw': $("#Rsw").html(), 'n': $("#boTriDai2").val(), 'fi3': $("#boTriDai1").val() },
+                success: function (response) {
+                    var rs = JSON.parse(response);
+                    console.log("data: ", rs);
+                    if (rs.ErrCode == 1) {
+                        $("#Am").html(rs.Data.Am.toFixed(2));
+                        $("#Ar").html(rs.Data.Ar.toFixed(2));
+                        $("#soSanhAlphaAmAr").html(rs.Data.SSAmAr);
+                        $("#nhanXet").html(rs.Data.Comment);
+                        $("#Ak").html(rs.Data.As.toFixed(2));
+                        $("#An").html(rs.Data.As1.toFixed(2));
+                        $("#Anbt").html(rs.Data.Anbt.toFixed(2));
+                        $("#Akbt").html(rs.Data.Akbt.toFixed(2));
+                        $("#NhanXetChiuNen").html(rs.Data.ChiuNen);
+                        $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo);
+                        $("#NhanXetCuongDo").html(rs.Data.CuongDo);
+                        $("#Qnc").html(rs.Data.Qnc.toFixed(2));
+                        $("#Q").html(rs.Data.Q.toFixed(2));
+                        $("#SSQnc").html(rs.Data.SSQnc);
+                        $("#Ad").html(rs.Data.Ad.toFixed(2));
+                        $("#Stt").html(rs.Data.Stt.toFixed(2));
+                        $("#Sct").html(rs.Data.Sct.toFixed(2));
+                        $("#Smax").html(rs.Data.Smax.toFixed(2));
+                        $("#S").html(rs.Data.S.toFixed(2));
                     }
-                });
-            } else {
-                alert("Tính dầm chữ T");
-            }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra trong quá trình tính thép. Vui lòng thử lại sau");
+                }
+            });
         }
 
 

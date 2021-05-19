@@ -86,6 +86,11 @@ namespace WebApplication1.Controllers
             string fi1k_str = Request["fi1k"];
             string Vk_str = Request["Vk"];
             string fi2k_str = Request["fi2k"];
+            string Rbt_str = Request["Rbt"];
+            string Q_str = Request["Q"];
+            string Rsw_str = Request["Rsw"];
+            string n_str = Request["n"];
+            string fi3_str = Request["fi3"];
 
             double Un = float.Parse(Un_str);
             double fi1n = float.Parse(fi1n_str);
@@ -98,6 +103,11 @@ namespace WebApplication1.Controllers
             double fi1k = float.Parse(fi1k_str);
             double Vk = float.Parse(Vk_str);
             double fi2k = float.Parse(fi2k_str);
+            double Rbt = float.Parse(Rbt_str);
+            double Q = float.Parse(Q_str);
+            double Rsw = float.Parse(Rsw_str);
+            double n = float.Parse(n_str);
+            double fi3 = float.Parse(fi3_str);
 
 
 
@@ -117,7 +127,7 @@ namespace WebApplication1.Controllers
             int h0 = h - a;
             double Cr = w / (1 + (Rs / Osc) * (1 - (w / 1.1)));
             double Ar = Cr * (1 - 0.5 * Cr);
-            double Am = M / (Rb * b * h0);
+            double Am = (M / (Rb * b * h0)) / 100;
 
             double As = 0;
             double As1 = 0;
@@ -131,7 +141,7 @@ namespace WebApplication1.Controllers
                 As1 = 0;
                 tinhThep_Ett.Comment = "Chỉ cần đặt cốt đơn";
                 //rs.Data.Comment = "Chỉ cần đặt cốt đơn";
-
+                tinhThep_Ett.SSAmAr = "≤";
             }
             else
             {
@@ -145,13 +155,14 @@ namespace WebApplication1.Controllers
                 {
                     tinhThep_Ett.Comment = "Tiết diện không hợp lý.";
                 }
+                tinhThep_Ett.SSAmAr = ">";
             }
 
             rs.ErrCode = EnumErrCode.Success;
             tinhThep_Ett.As = As;
             tinhThep_Ett.As1 = As1;
-            tinhThep_Ett.Anbt = Un * 3.14 * Math.Pow((fi1n / 2), 2) + Vn * 3.14 * Math.Pow((fi2n / 2), 2);
-            tinhThep_Ett.Akbt = Uk * 3.14 * Math.Pow((fi1k / 2), 2) + Vk * 3.14 * Math.Pow((fi2k / 2), 2);
+            tinhThep_Ett.Anbt = (Un * 3.14 * Math.Pow((fi1n / 2), 2) + Vn * 3.14 * Math.Pow((fi2n / 2), 2)) / 100;
+            tinhThep_Ett.Akbt = (Uk * 3.14 * Math.Pow((fi1k / 2), 2) + Vk * 3.14 * Math.Pow((fi2k / 2), 2)) / 100;
             if ((fi1n <= b / 10) && (fi2n <= b / 10) && (fi1n - fi2n <= 6))
             {
                 tinhThep_Ett.ChiuNen = "Bố trí thép chịu nén hợp lý";
@@ -168,6 +179,50 @@ namespace WebApplication1.Controllers
             {
                 tinhThep_Ett.ChiuKeo = "Bố trí thép chịu kéo chưa hợp lý";
             }
+
+            //Tính cốt đai
+            double Sw = (Rbt * b * Math.Pow(h, 2)) / (Q * Math.Pow(10, 4));
+            double qsw = (Rsw * (n * Math.PI * Math.Pow((fi3 / 2), 2) / 4)) / Sw;
+            double Qsw = 0.75 * qsw * 2 * h0;
+            double Qb = 0;
+            if (qsw > 0.25 * Rbt * b)
+            {
+                Qb = (1.5 * Rbt * b * Math.Pow(h0, 2)) / (2 * h0);
+            }
+            else
+            {
+                Qb = (4 * 1.5 * Math.Pow(h0, 2) * qsw) / (2 * h0);
+            }
+
+            double Qnc = Qb + Qsw;
+            tinhThep_Ett.Qnc = Qnc / 100;
+            tinhThep_Ett.Q = Q;
+            if (Qnc >= Q)
+            {
+                tinhThep_Ett.CuongDo = "dầm đủ khả năng chịu ứng suất nén chính";
+                tinhThep_Ett.SSQnc = "≥";
+            }
+            else
+            {
+                tinhThep_Ett.CuongDo = "dầm không đủ khả năng chịu ứng suất nén chính";
+                tinhThep_Ett.SSQnc = "<";
+            }
+
+            double Stt = (Rsw * (n * Math.PI * Math.Pow(fi3, 2)) / 4) * qsw / 100;
+            tinhThep_Ett.Stt = Stt;
+
+            double Sct = (h0 / 2) > 300 ? (h0 / 2) : 300;
+            tinhThep_Ett.Sct = Sct;
+
+            double Smax = (Rbt * b * h0) / Q / 100;
+            tinhThep_Ett.Smax = Smax;
+
+            double s = Stt < Sct ? Stt : (Sct < Smax ? Sct : Smax);
+            tinhThep_Ett.S = s;
+
+            double Ad = (n * Math.PI * Math.Pow(fi3, 2)) / 4 / 100;
+            tinhThep_Ett.Ad = Ad;
+
             rs.Data = tinhThep_Ett;
             return JsonConvert.SerializeObject(rs);
         }
@@ -175,79 +230,203 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string TinhThepDamCT()
         {
+            Result_ett<TinhThep_ett> rs = new Result_ett<TinhThep_ett>();
+            TinhThep_ett tinhThep_Ett = new TinhThep_ett();
+
             string Rs_str = Request["Rs"];
             string Rb_str = Request["Rb"];
             string h_str = Request["h"];
             string a_str = Request["a"];
             string b_str = Request["b"];
-            string bf_str = Request["beRongCanh"];
-            string M_str = Request["thongSoNoiNuc5"];
+            string bf_str = Request["bf"];
+            string hf_str = Request["hf"];
+            string M_str = Request["M"];
             //string C_str = Request["C"]; //???
             string Rsc_str = Request["Rsc"];
+
+            string Un_str = Request["Un"];
+            string fi1n_str = Request["fi1n"];
+            string Vn_str = Request["Vn"];
+            string fi2n_str = Request["fi2n"];
+            string Uk_str = Request["Uk"];
+            string fi1k_str = Request["fi1k"];
+            string Vk_str = Request["Vk"];
+            string fi2k_str = Request["fi2k"];
+            string Rbt_str = Request["Rbt"];
+            string Q_str = Request["Q"];
+            string Rsw_str = Request["Rsw"];
+            string n_str = Request["n"];
+            string fi3_str = Request["fi3"];
+
+            double Un = float.Parse(Un_str);
+            double fi1n = float.Parse(fi1n_str);
+            double Vn = float.Parse(Vn_str);
+            double fi2n = float.Parse(fi2n_str);
+
+
+
+            double Uk = float.Parse(Uk_str);
+            double fi1k = float.Parse(fi1k_str);
+            double Vk = float.Parse(Vk_str);
+            double fi2k = float.Parse(fi2k_str);
+            double Rbt = float.Parse(Rbt_str);
+            double Q = float.Parse(Q_str);
+            double Rsw = float.Parse(Rsw_str);
+            double n = float.Parse(n_str);
+            double fi3 = float.Parse(fi3_str);
+
+
 
             int Rs = int.Parse(Rs_str);
             double Rb = float.Parse(Rb_str);
             int h = int.Parse(h_str);
             int a = int.Parse(a_str);
             int b = int.Parse(b_str);
-            int bs = b - 60;
-            int bf = int.Parse(bf_str);
-            int M = int.Parse(M_str);
+            //int bf = int.Parse(bf_str);
+            double M = double.Parse(M_str) * Math.Pow(10, 7);
+            //int C = int.Parse(C_str);
             int C = 2500;
             int Rsc = int.Parse(Rsc_str);
-            int Cs = 1; // để mặc định bằng 1.
 
             int Osc = (Rs <= 400) ? Rs : 400;
             double w = 0.85 - 0.008 * Rb;
             int h0 = h - a;
             double Cr = w / (1 + (Rs / Osc) * (1 - (w / 1.1)));
             double Ar = Cr * (1 - 0.5 * Cr);
-            double Am = 0;
-            double Mf = Rb * b * bf * (h0 - 0.5 * bf);
+
             double As = 0;
             double As1 = 0;
-            int hf1 = 120;
+
+
+            int bs = b - 60;
+            int bf = int.Parse(bf_str);
+            int hf = int.Parse(hf_str);
+            int Cs = 1; // để mặc định bằng 1.
+
+            double Am = 0;
+            double Mf = Rb * bf * hf * (h0 - 0.5 * hf);
             int Sc = 0;
 
             if (M <= Mf)
             {
-                Am = M / (Rb * b * h0);
+                Am = M / (Rb * bf * h0);
                 if (Am <= Ar)
                 {
                     As = M / (Rs * C * h0);
+                    tinhThep_Ett.SSAmAr = "≤";
+                    tinhThep_Ett.Comment = "Chỉ cần đặt cốt đơn";
                 }
                 else
                 {
                     if (Am <= 0.5)
                     {
-                        As1 = (M - Ar * Rb * b * h0 * h0) / (Rsc * (h0 - a));
-                        As = ((Cr * Rb * b * h0) / Rs) + ((Rsc / Rs) * As1);
+                        As1 = (M - Ar * Rb * bf * h0 * h0) / (Rsc * (h0 - a));
+                        As = ((Cr * Rb * bf * h0) / Rs) + ((Rsc / Rs) * As1);
+                        tinhThep_Ett.Comment = "Cần đặt cốt kép";
                     }
                     else
                     {
-                        return "Tiết diện không hợp lý.";
+                        tinhThep_Ett.Comment = "Tiết diện không hợp lý.";
                     }
+                    tinhThep_Ett.SSAmAr = ">";
                 }
             }
             else
             {
-                Am = (M - Rb * (b - bs) * bf * (h0 - 0.5 * bf)) / (Rb * b * h0 * h0);
+                Am = (M - Rb * (bf - b) * hf * (h0 - 0.5 * hf)) / (Rb * b * h0 * h0);
                 if (Am <= Ar)
                 {
                     As = (Rb / Rs) * (Cs * bs * h0 + (b - bs) * bf);
+                    tinhThep_Ett.SSAmAr = "≤";
+                    tinhThep_Ett.Comment = "Chỉ cần đặt cốt đơn";
                 }
                 else
                 {
                     if (Am <= 0.5)
                     {
-                        //As1 = ((M - Ar * Rb * b * h0 * h0) - Rb * (bf1 - b) * hf1 * (h0 - 0.5 * hf1)) / (Rsc * (h0 - a1));
-                        As = ((Cr * Rb * b * h0) / Rs) + (Rsc / Rs) * As1;
+                        double a1 = hf / 2;
+                        As1 = ((M - Ar * Rb * bf * h0 * h0) - Rb * (bf - b) * hf * (h0 - 0.5 * hf)) / (Rsc * (h0 - a1)) / 100;
+                        As = ((Cr * Rb * bf * h0) / Rs) + (Rsc / Rs) * As1;
+                        tinhThep_Ett.Comment = "Cần đặt cốt kép";
                     }
+                    else
+                    {
+                        tinhThep_Ett.Comment = "Tiết diện không hợp lý.";
+                    }
+                    tinhThep_Ett.SSAmAr = ">";
                 }
 
             }
 
-            return string.Empty;
+            tinhThep_Ett.Am = Am;
+            tinhThep_Ett.As = As / 100;
+            tinhThep_Ett.Ar = Ar;
+            tinhThep_Ett.As1 = As1;
+            tinhThep_Ett.Anbt = (Un * 3.14 * Math.Pow((fi1n / 2), 2) + Vn * 3.14 * Math.Pow((fi2n / 2), 2)) / 100;
+            tinhThep_Ett.Akbt = (Uk * 3.14 * Math.Pow((fi1k / 2), 2) + Vk * 3.14 * Math.Pow((fi2k / 2), 2)) / 100;
+            if ((fi1n <= b / 10) && (fi2n <= b / 10) && (fi1n - fi2n <= 6))
+            {
+                tinhThep_Ett.ChiuNen = "Bố trí thép chịu nén hợp lý";
+            }
+            else
+            {
+                tinhThep_Ett.ChiuNen = "Bố trí thép chịu nén chưa hợp lý";
+            }
+            if ((fi1k <= b / 10) && (fi2k <= b / 10) && (fi1k - fi2k <= 6))
+            {
+                tinhThep_Ett.ChiuKeo = "Bố trí thép chịu kéo hợp lý";
+            }
+            else
+            {
+                tinhThep_Ett.ChiuKeo = "Bố trí thép chịu kéo chưa hợp lý";
+            }
+
+            //Tính cốt đai
+            double Sw = (Rbt * b * Math.Pow(h, 2)) / (Q * Math.Pow(10, 4));
+            double qsw = (Rsw * (n * Math.PI * Math.Pow((fi3 / 2), 2) / 4)) / Sw;
+            double Qsw = 0.75 * qsw * 2 * h0;
+            double Qb = 0;
+            if (qsw > 0.25 * Rbt * b)
+            {
+                Qb = (1.5 * Rbt * b * Math.Pow(h0, 2)) / (2 * h0);
+            }
+            else
+            {
+                Qb = (4 * 1.5 * Math.Pow(h0, 2) * qsw) / (2 * h0);
+            }
+
+            double Qnc = Qb + Qsw;
+            tinhThep_Ett.Qnc = Qnc / 100;
+            tinhThep_Ett.Q = Q;
+            if (Qnc >= Q)
+            {
+                tinhThep_Ett.CuongDo = "dầm đủ khả năng chịu ứng suất nén chính";
+                tinhThep_Ett.SSQnc = "≥";
+            }
+            else
+            {
+                tinhThep_Ett.CuongDo = "dầm không đủ khả năng chịu ứng suất nén chính";
+                tinhThep_Ett.SSQnc = "<";
+            }
+
+            double Stt = (Rsw * (n * Math.PI * Math.Pow(fi3, 2)) / 4) * qsw / 100;
+            tinhThep_Ett.Stt = Stt;
+
+            double Sct = (h0 / 2) > 300 ? (h0 / 2) : 300;
+            tinhThep_Ett.Sct = Sct;
+
+            double Smax = (Rbt * b * h0) / Q / 100;
+            tinhThep_Ett.Smax = Smax;
+
+            double s = Stt < Sct ? Stt : (Sct < Smax ? Sct : Smax);
+            tinhThep_Ett.S = s;
+
+            double Ad = (n * Math.PI * Math.Pow(fi3, 2)) / 4 / 100;
+            tinhThep_Ett.Ad = Ad;
+
+            rs.ErrCode = EnumErrCode.Success;
+            rs.Data = tinhThep_Ett;
+            return JsonConvert.SerializeObject(rs);
         }
 
         [HttpPost]
@@ -340,7 +519,7 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                
+
                 if (((N * Math.Pow(10, 4)) / (Rb1 * b)) > (Cr * h0))
                 {
                     tinhThep_Ett.Comment = "Tính toán theo cấu kiện chịu lệch tâm bé";
@@ -382,7 +561,7 @@ namespace WebApplication1.Controllers
             double mb = tinhThep_Ett.MuyB * mx;
             tinhThep_Ett.MB = mb;
 
-            if (mh / h <= mb /b)
+            if (mh / h <= mb / b)
             {
                 tinhThep_Ett.TinhTheoPhuong = "Cạnh B";
             }
@@ -429,7 +608,7 @@ namespace WebApplication1.Controllers
                     double fi = lambda <= 14 ? 1 : 1.028 - 0.0000288 * Math.Pow(lambda, 2) - 0.0016 * lambda;
                     double fie = fi + ((1 - fi) * tinhThep_Ett.Epxilon) / 0.3;
                     double gamaE = 1 / ((0.5 - epxilon) * (2 + epxilon));
-                    double Ast = (((gamaE * N * Math.Pow(10, 4)) / fie - Rb1 * b * h) / (Rs -  Rb1)) * Math.Pow(10, -4);
+                    double Ast = (((gamaE * N * Math.Pow(10, 4)) / fie - Rb1 * b * h) / (Rs - Rb1)) * Math.Pow(10, -4);
                     tinhThep_Ett.As = Ast;
                     break;
                 case 2:
