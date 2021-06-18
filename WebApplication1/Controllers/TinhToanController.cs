@@ -429,6 +429,7 @@ namespace WebApplication1.Controllers
             return JsonConvert.SerializeObject(rs);
         }
 
+
         [HttpPost]
         public string TinhThepCot()
         {

@@ -336,10 +336,22 @@ select {
 	left: 94px;
 }
 
+.NhanXetCuongDo {
+	position: absolute;
+	top: 950px;
+	left: 94px;
+}
+
 .Qnc {
 	position: absolute;
 	top: 920px;
 	left: 270px;
+}
+
+.SSQnc {
+	position: absolute;
+	top: 920px;
+	left: 350px;
 }
 
 .Q {
@@ -464,6 +476,12 @@ select {
 	position: absolute;
 	top: 552px;
 	left: 432px;
+}
+
+#btnReset {
+	position: absolute;
+	top: 572px;
+	left: 542px;
 }
 
 #btnNhanXet {

@@ -58,40 +58,40 @@
                                 <select id="macBeTong" class="macBeTong">
 
                                     @*<option value="B7,5">B7,5</option>
-            <option value="B10">B10</option>
-            <option value="B12,5">B12,5</option>
-            <option value="B15(M200)">B15(M200)</option>
-            <option value="B20(M250)">B20(M250)</option>
-            <option selected="" value="B22,5(M300)">B22,5(M300)</option>
-            <option value="B25(M350)">B25(M350)</option>
-            <option value="B30(M400)">B30(M400)</option>
-            <option value="B35(M450)">B35(M450)</option>
-            <option value="B40(M500)">B40(M500)</option>
-            <option value="B45(M600)">B45(M600)</option>*@
+                                        <option value="B10">B10</option>
+                                        <option value="B12,5">B12,5</option>
+                                        <option value="B15(M200)">B15(M200)</option>
+                                        <option value="B20(M250)">B20(M250)</option>
+                                        <option selected="" value="B22,5(M300)">B22,5(M300)</option>
+                                        <option value="B25(M350)">B25(M350)</option>
+                                        <option value="B30(M400)">B30(M400)</option>
+                                        <option value="B35(M450)">B35(M450)</option>
+                                        <option value="B40(M500)">B40(M500)</option>
+                                        <option value="B45(M600)">B45(M600)</option>*@
                                 </select>
                                 <br>
 
 
                                 <select id="macThepDoc" class="macThepDoc" onchange="tinhToan()">
                                     @*<option value="AI (CI)">AI (CI)</option>
-            <option value="AII(CII)">AII(CII)</option>
-            <option selected="" value="AIII(CIII)">AIII(CIII)</option>
-            <option value="AIV(CIV)">AIV(CIV)</option>
-            <option value="AV">AV</option>
-            <option value="AVI">AVI</option>
-            <option value="AVII">AVII</option>*@
+                                        <option value="AII(CII)">AII(CII)</option>
+                                        <option selected="" value="AIII(CIII)">AIII(CIII)</option>
+                                        <option value="AIV(CIV)">AIV(CIV)</option>
+                                        <option value="AV">AV</option>
+                                        <option value="AVI">AVI</option>
+                                        <option value="AVII">AVII</option>*@
                                 </select>
                                 <br>
 
 
                                 <select id="macThepDai" onchange="tinhToan()">
                                     @*<option selected="" value="AI (CI)">AI (CI)</option>
-            <option value="AII(CII)">AII(CII)</option>
-            <option value="AIII(CIII)">AIII(CIII)</option>
-            <option value="AIV(CIV)">AIV(CIV)</option>
-            <option value="AV">AV</option>
-            <option value="AVI">AVI</option>
-            <option value="AVII">AVII</option>*@
+                                        <option value="AII(CII)">AII(CII)</option>
+                                        <option value="AIII(CIII)">AIII(CIII)</option>
+                                        <option value="AIV(CIV)">AIV(CIV)</option>
+                                        <option value="AV">AV</option>
+                                        <option value="AVI">AVI</option>
+                                        <option value="AVII">AVII</option>*@
                                 </select>
                                 <br>
 
@@ -141,15 +141,15 @@
                                 <span class="An" id="An">0</span>
                                 <span class="An1">-10.9668727984344</span>
 
-                                <span class="Ak" id="Ak">5</span>
-                                <span class="Anbt" id="Anbt">5.1</span>
+                                <span class="Ak" id="Ak">0</span>
+                                <span class="Anbt" id="Anbt"></span>
                                 <i><span class="NhanXetChiuNen" id="NhanXetChiuNen"></span></i>
-                                <span class="Akbt" id="Akbt">7.6</span>
+                                <span class="Akbt" id="Akbt">0</span>
                                 <i><span class="NhanXetChiuKeo" id="NhanXetChiuKeo"></span></i>
 
-                                <span class="Qnc" id="Qnc">39.5</span>
+                                <span class="Qnc" id="Qnc">0</span>
                                 <span class="SSQnc" id="SSQnc"></span>
-                                <span class="Q" id="Q">1.2</span>
+                                <span class="Q" id="Q">0</span>
 
                                 <span class="Ad" id="Ad">0</span>
                                 <span class="Stt" id="Stt">0</span>
@@ -164,13 +164,14 @@
                                 <span class="Rs" id="Rs">0</span>
                                 <span class="Rsc" id="Rsc">0</span>
                                 <span class="Rsw" id="Rsw">0</span>
-                                <i><span class="NhanXetCuongDo" id="NhanXetCuongDo"> abcxyz</span></i>
+                                <i><span class="NhanXetCuongDo" id="NhanXetCuongDo"></span></i>
                                 @*<span class="Es">0</span>*@
                                 <span class="soSanhAlphaAmAr" id="soSanhAlphaAmAr">≤</span>
                                 <span class="Es" id="Es">0</span>
-                                <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">
+                                <input id="btnReset" type="button" value="Reset" class="btn btn-danger notPrint" onclick="reset()">
+                                @*<input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">*@
                                 @*<input id="btnNhanXet" type="button" value="Nhận xét" class="btn btn-danger notPrint" onclick="shareFB(nhanXetBoTri)">*@
-                                <input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
+                                @*<input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">*@
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -180,9 +181,9 @@
                 </div>
                 <div class="col-md-2 text-lg-right" style="font-size: 20px; padding-top: 100px;">
                     <ul id="UlMenu">
-                        <li>Tính thép</li>
-                        <li>In báo cáo</li>
-                        <li>Nhận xét</li>
+                        <li onclick="tinhThep()">Tính thép</li>
+                        <li onclick="window.print()">In báo cáo</li>
+                        <li onclick="nhanXet()">Nhận xét</li>
                     </ul>
                 </div>
             </div>
@@ -398,6 +399,33 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script>
+        function reset() {
+            $("#An").html("0");
+            $("#Anbt").html("0");
+            $("#Ak").html("0");
+            $("#Akbt").html("0");
+            $("#Qnc").html("0");
+            $("#Q").html("0");
+            $("#Ad").html("0");
+            $("#Stt").html("0");
+            $("#Sct").html("0");
+            $("#Smax").html("0");
+            $("#S").html("0");
+            $("#Am").html("0");
+            $("#Ar").html("0");
+            $("#nhanXet").html("");
+            $("#NhanXetChiuNen").html("");
+            $("#NhanXetChiuKeo").html("");
+            $("#NhanXetCuongDo").html("");
+        }
+
+        function nhanXet() {
+            $("#nhanXet").show();
+            $("#NhanXetChiuNen").show();
+            $("#NhanXetChiuKeo").show();
+            $("#NhanXetCuongDo").show();
+        }
+
         function getListVatLieu() {
             $.ajax({
                 type: "POST",
@@ -527,7 +555,7 @@
             $.ajax({
                 type: "POST",
                 url: '/TinhToan/TinhThepDamCT',
-                data: { 'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'bf': $("#beRongCanh").val(), 'hf': $("#chieuCaoCanh").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'fi3': $("#boTriDai1").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(), 'hf': $("#chieuCaoCanh").val(), 'n': $("#boTriDai2").val(), 'Rsw': $("#Rsw").html(), 'Q': $("#thongSoNoiNuc6").val(), 'Rbt': $("#Rbt").html()},
+                data: { 'Rs': $("#Rs").html(), 'Rb': $("#Rb1").html(), 'h': $("#chieuCaoDam").val(), 'a': $("#trongTamCotThep").val(), 'b': $("#chieuRongDam").val(), 'bf': $("#beRongCanh").val(), 'hf': $("#chieuCaoCanh").val(), 'M': $("#thongSoNoiNuc5").val(), 'Rsc': $("#Rsc").html(), 'Un': $("#Un").val(), 'fi1n': $("#fi1n").val(), 'fi3': $("#boTriDai1").val(), 'Vn': $("#Vn").val(), 'fi2n': $("#fi2n").val(), 'Uk': $("#Uk").val(), 'fi1k': $("#fi1k").val(), 'Vk': $("#Vk").val(), 'fi2k': $("#fi2k").val(), 'hf': $("#chieuCaoCanh").val(), 'n': $("#boTriDai2").val(), 'Rsw': $("#Rsw").html(), 'Q': $("#thongSoNoiNuc6").val(), 'Rbt': $("#Rbt").html() },
                 success: function (response) {
                     var rs = JSON.parse(response);
                     console.log("data: ", rs);
@@ -535,14 +563,14 @@
                         $("#Am").html(rs.Data.Am.toFixed(2));
                         $("#Ar").html(rs.Data.Ar.toFixed(2));
                         $("#soSanhAlphaAmAr").html(rs.Data.SSAmAr);
-                        $("#nhanXet").html(rs.Data.Comment);
+                        $("#nhanXet").html(rs.Data.Comment).hide();
                         $("#Ak").html(rs.Data.As.toFixed(2));
                         $("#An").html(rs.Data.As1.toFixed(2));
                         $("#Anbt").html(rs.Data.Anbt.toFixed(2));
                         $("#Akbt").html(rs.Data.Akbt.toFixed(2));
-                        $("#NhanXetChiuNen").html(rs.Data.ChiuNen);
-                        $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo);
-                        $("#NhanXetCuongDo").html(rs.Data.CuongDo);
+                        $("#NhanXetChiuNen").html(rs.Data.ChiuNen).hide();
+                        $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo).hide();
+                        $("#NhanXetCuongDo").html(rs.Data.CuongDo).hide();
                         $("#Qnc").html(rs.Data.Qnc.toFixed(2));
                         $("#Q").html(rs.Data.Q.toFixed(2));
                         $("#SSQnc").html(rs.Data.SSQnc);

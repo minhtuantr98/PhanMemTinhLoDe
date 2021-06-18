@@ -104,7 +104,7 @@
 
                                 <input id="trongTamCotThep" type="number" min="0" step="1" value="40">
                                 <br>
-                                <input id="beRongCanh" type="number" min="0" step="1" value="40">
+                                @*<input id="beRongCanh" type="number" min="0" step="1" value="40">*@
 
                                 <input id="Un" type="number" min="0" step="1" value="2">
 
@@ -145,16 +145,16 @@
                                 <span class="Akbt" id="Akbt">7.6</span>
                                 <i><span class="NhanXetChiuKeo" id="NhanXetChiuKeo"></span></i>
 
-                                <span class="Qnc" id="Qnc">39.5</span>
+                                <span class="Qnc" id="Qnc">0</span>
                                 <span class="SSQnc" id="SSQnc"></span>
-                                <span class="Q" id="Q">1.2</span>
+                                <span class="Q" id="Q">0</span>
 
                                 <span class="Ad" id="Ad"></span>
-                                <span class="Stt" id="Stt">150</span>
+                                <span class="Stt" id="Stt">0</span>
 
-                                <span class="Sct" id="Sct">375</span>
-                                <span class="Smax" id="Smax">1058</span>
-                                <span class="S" id="S">150</span>
+                                <span class="Sct" id="Sct">0</span>
+                                <span class="Smax" id="Smax">0</span>
+                                <span class="S" id="S">0</span>
                                 <span class="Rb1" id="Rb1">0</span>
                                 <span class="Rbt" id="Rbt">0</span>
 
@@ -166,9 +166,10 @@
                                 @*<span class="Es">0</span>*@
                                 <span class="soSanhAlphaAmAr" id="soSanhAlphaAmAr">≤</span>
                                 <span class="Es" id="Es">0</span>
-                                <input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">
+                                <input id="btnReset" type="button" value="Reset" class="btn btn-danger notPrint" onclick="reset()">
+                                @*<input id="btnTinhToan" type="button" value="Tính thép" class="btn btn-danger notPrint" onclick="tinhThep()">*@
                                 @*<input id="btnNhanXet" type="button" value="Nhận xét" class="btn btn-danger notPrint" onclick="shareFB(nhanXetBoTri)">*@
-                                <input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">
+                                @*<input id="btnPrint" type="button" value="  In  " class="btn btn-danger notPrint" onclick="window.print()">*@
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -178,9 +179,9 @@
                 </div>
                 <div class="col-md-2 text-lg-right" style="font-size: 20px; padding-top: 100px;">
                     <ul id="UlMenu">
-                        <li>Tính thép</li>
-                        <li>In báo cáo</li>
-                        <li>Nhận xét</li>
+                        <li onclick="tinhThep()">Tính thép</li>
+                        <li onclick="window.print()">In báo cáo</li>
+                        <li onclick="nhanXet()">Nhận xét</li>
                     </ul>
                 </div>
             </div>
@@ -396,6 +397,34 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script>
+
+        function reset() {
+            $("#An").html("0");
+            $("#Anbt").html("0");
+            $("#Ak").html("0");
+            $("#Akbt").html("0");
+            $("#Qnc").html("0");
+            $("#Q").html("0");
+            $("#Ad").html("0");
+            $("#Stt").html("0");
+            $("#Sct").html("0");
+            $("#Smax").html("0");
+            $("#S").html("0");
+            $("#Am").html("0");
+            $("#Ar").html("0");
+            $("#nhanXet").html("");
+            $("#NhanXetChiuNen").html("");
+            $("#NhanXetChiuKeo").html("");
+            $("#NhanXetCuongDo").html("");
+        }
+
+        function nhanXet() {
+            $("#nhanXet").show();
+            $("#NhanXetChiuNen").show();
+            $("#NhanXetChiuKeo").show();
+            $("#NhanXetCuongDo").show();
+        }
+
         function getListVatLieu() {
             $.ajax({
                 type: "POST",
@@ -533,14 +562,14 @@
                         $("#Am").html(rs.Data.Am.toFixed(2));
                         $("#Ar").html(rs.Data.Ar.toFixed(2));
                         $("#soSanhAlphaAmAr").html(rs.Data.SSAmAr);
-                        $("#nhanXet").html(rs.Data.Comment);
+                        $("#nhanXet").html(rs.Data.Comment).hide();
                         $("#Ak").html(rs.Data.As.toFixed(2));
                         $("#An").html(rs.Data.As1.toFixed(2));
                         $("#Anbt").html(rs.Data.Anbt.toFixed(2));
                         $("#Akbt").html(rs.Data.Akbt.toFixed(2));
-                        $("#NhanXetChiuNen").html(rs.Data.ChiuNen);
-                        $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo);
-                        $("#NhanXetCuongDo").html(rs.Data.CuongDo);
+                        $("#NhanXetChiuNen").html(rs.Data.ChiuNen).hide();
+                        $("#NhanXetChiuKeo").html(rs.Data.ChiuKeo).hide();
+                        $("#NhanXetCuongDo").html(rs.Data.CuongDo).hide();
                         $("#Qnc").html(rs.Data.Qnc.toFixed(2));
                         $("#Q").html(rs.Data.Q.toFixed(2));
                         $("#SSQnc").html(rs.Data.SSQnc);
