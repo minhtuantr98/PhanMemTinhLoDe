@@ -37,7 +37,7 @@
             <div class="row text-uppercase" style="color: white; padding: 1rem !important;">
                 <div class="col-md-2 text-xl-left" style="font-size: 20px; padding-top: 100px;">
                     <ul id="UlMenu" style="text-align: left;">
-                        <li>Thiết lập</li>
+                        <li id="btnThietLap" name="btnThietLap">Thiết lập</li>
                         <li>Thông số</li>
                         <li>Nội lực</li>
                     </ul>
@@ -590,6 +590,9 @@
 
         $(document).ready(function () {
             getListVatLieu();
+            $( "#btnThietLap" ).click(function() {
+                alert( "phần mền chưa cập nhật tính năng này!" );
+            });
 
             $('#macBeTong').on('change', function () {
                 var selectedMBT = $(this).find(":selected").val();

@@ -68,6 +68,7 @@ namespace WebApplication1.Controllers
             Result_ett<TinhThep_ett> rs = new Result_ett<TinhThep_ett>();
             TinhThep_ett tinhThep_Ett = new TinhThep_ett();
 
+            #region lấy dữ liệu từ tham số truyền vào
             string Rs_str = Request["Rs"];
             string Rb_str = Request["Rb"];
             string h_str = Request["h"];
@@ -91,7 +92,9 @@ namespace WebApplication1.Controllers
             string Rsw_str = Request["Rsw"];
             string n_str = Request["n"];
             string fi3_str = Request["fi3"];
+            #endregion
 
+            #region phần để chuyển dữ liệu từ dạng chuỗi string sang dạng số thực double
             double Un = float.Parse(Un_str);
             double fi1n = float.Parse(fi1n_str);
             double Vn = float.Parse(Vn_str);
@@ -131,7 +134,10 @@ namespace WebApplication1.Controllers
 
             double As = 0;
             double As1 = 0;
+            #endregion
 
+
+            #region phần tính toán theo thuật toán + công thức
             tinhThep_Ett.Am = Am;
             tinhThep_Ett.Ar = Ar;
 
@@ -222,9 +228,11 @@ namespace WebApplication1.Controllers
 
             double Ad = (n * Math.PI * Math.Pow(fi3, 2)) / 4 / 100;
             tinhThep_Ett.Ad = Ad;
-
+            #endregion
+            #region trả dữ liệu cho hàm  ajã để trình bày lên view
             rs.Data = tinhThep_Ett;
             return JsonConvert.SerializeObject(rs);
+            #endregion
         }
 
         [HttpPost]
