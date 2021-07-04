@@ -387,7 +387,7 @@
             position: absolute;
             top: 758px;
             left: 328px;
-            width: 60px;
+            width: 200px;
             height: 21px;
         }
 
@@ -722,7 +722,7 @@
                 </div>
                 <div class="col-md-2 text-lg-right" style="font-size: 20px; padding-top: 100px;">
                     <ul id="UlMenu">
-                        <li onclick="tinhThep()">Tính thép</li>
+                        <li onclick="tinhThepCot()">Tính thép</li>
                         <li onclick="window.print()">In báo cáo</li>
                         <li onclick="nhanXet()">Nhận xét</li>
                     </ul>
@@ -1105,14 +1105,30 @@
                         $("#LH").html(rs.Data.Lo_ih.toFixed(2));
                         $("#LB").html(rs.Data.Lo_ib.toFixed(2));
                         $("#MH").html(rs.Data.MH.toFixed(1));
+                        if(rs.Data.Lo_ih.toFixed(2) > 28) {
+                             $("#SSMUYH").html("> 28");
+                        } else {
+                            $("#SSMUYH").html("< 28");
+                        }
+                        if(rs.Data.Lo_ib.toFixed(2) > 28) {
+                             $("#SSMUYB").html("> 28");
+                        } else {
+                            $("#SSMUYB").html("< 28");
+                        }
+                        
                         $("#MB").html(rs.Data.MB.toFixed(1));
                         $("#NXCANH").html(rs.Data.TinhTheoPhuong).hide();
                         $("#M").html(rs.Data.Mx);
-                        $("#E1").html(rs.Data.E1.toFixed(1));
-                        $("#EA").html(rs.Data.Ea.toFixed(1));
-                        $("#E0").html(rs.Data.E0.toFixed(1));
+                        $("#E1").html(rs.Data.E1.toFixed(3));
+                        $("#EA").html(rs.Data.Ea.toFixed(2));
+                        if(rs.Data.E1 > rs.Data.Ea) {
+                             $("#EE").html(rs.Data.E1.toFixed(2));
+                        } else {
+                            $("#EE").html(rs.Data.Ea.toFixed(2));
+                        }
+                        //$("#E0").html(rs.Data.E0.toFixed(3));
                         $("#E").html(rs.Data.E.toFixed(1));
-                        $("#EPXILON").html(rs.Data.Epxilon.toFixed(1));
+                        $("#EPXILON").html(rs.Data.Epxilon.toFixed(3));
                         $("#SSEPXILON").html(rs.Data.SSEPXILON);
                         $("#X1").html(rs.Data.X1.toFixed(1));
                         $("#SSX1").html(rs.Data.SSX1);
@@ -1124,6 +1140,10 @@
                         $("#NXBT").html(rs.Data.MuyCmt).hide();
                         $("#SSMUYBT").html(rs.Data.SSMuyCmt);
                         $("#SSABT").html(rs.Data.SSABT);
+                        $("#MUYH").html(rs.Data.MuyH.toFixed(2));
+                        $("#MUYB").html(rs.Data.MuyB.toFixed(2));
+                        $("#MHH").html(rs.Data.MHH.toFixed(2));
+                        $("#MBB").html(rs.Data.MBB.toFixed(2));
 
                     } else {
                         if (rs.ErrCode == 2) {

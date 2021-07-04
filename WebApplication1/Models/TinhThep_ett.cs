@@ -56,7 +56,9 @@ namespace WebApplication1.Models
         public double MuyH { get; set; }
         public double MuyB { get; set; }
         public double MH { get; set; }
+        public double MHH { get; set; }
         public double MB { get; set; }
+        public double MBB { get; set; }
         public string TinhTheoPhuong { get; set; }
         public double Mx { get; set; }
         public double E1 { get; set; }

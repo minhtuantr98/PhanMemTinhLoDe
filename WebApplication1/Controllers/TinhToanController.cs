@@ -122,7 +122,8 @@ namespace WebApplication1.Controllers
             //int bf = int.Parse(bf_str);
             double M = double.Parse(M_str) * Math.Pow(10, 6);
             //int C = int.Parse(C_str);
-            int C = 2500;
+            //int C = 2500;
+            double C = 0;
             int Rsc = int.Parse(Rsc_str);
 
             int Osc = (Rs <= 400) ? Rs : 400;
@@ -131,7 +132,7 @@ namespace WebApplication1.Controllers
             double Cr = w / (1 + (Rs / Osc) * (1 - (w / 1.1)));
             double Ar = Cr * (1 - 0.5 * Cr);
             double Am = (M / (Rb * b * h0)) / 100;
-
+            C = 1 - Math.Sqrt(1 - 2 * Am);
             double As = 0;
             double As1 = 0;
             #endregion
@@ -165,7 +166,7 @@ namespace WebApplication1.Controllers
             }
 
             rs.ErrCode = EnumErrCode.Success;
-            tinhThep_Ett.As = As;
+            tinhThep_Ett.As = As / 100;
             tinhThep_Ett.As1 = As1;
             tinhThep_Ett.Anbt = (Un * 3.14 * Math.Pow((fi1n / 2), 2) + Vn * 3.14 * Math.Pow((fi2n / 2), 2)) / 100;
             tinhThep_Ett.Akbt = (Uk * 3.14 * Math.Pow((fi1k / 2), 2) + Vk * 3.14 * Math.Pow((fi2k / 2), 2)) / 100;
@@ -293,7 +294,7 @@ namespace WebApplication1.Controllers
             //int bf = int.Parse(bf_str);
             double M = double.Parse(M_str) * Math.Pow(10, 7);
             //int C = int.Parse(C_str);
-            int C = 2500;
+            double C = 0;
             int Rsc = int.Parse(Rsc_str);
 
             int Osc = (Rs <= 400) ? Rs : 400;
@@ -318,6 +319,7 @@ namespace WebApplication1.Controllers
             if (M <= Mf)
             {
                 Am = M / (Rb * bf * h0);
+                C = 1 - Math.Sqrt(1 - 2 * Am);
                 if (Am <= Ar)
                 {
                     As = M / (Rs * C * h0);
@@ -443,7 +445,6 @@ namespace WebApplication1.Controllers
         {
             Result_ett<TinhThepCot_ett> rs = new Result_ett<TinhThepCot_ett>();
             TinhThepCot_ett tinhThep_Ett = new TinhThepCot_ett();
-
             int typeOfCal = 0;
 
             string l_str = Request["l"];
@@ -485,6 +486,7 @@ namespace WebApplication1.Controllers
             double Rs = double.Parse(Rs_str);
             double w = 0.85 - 0.008 * Rb1;
             double Cr = w / (1 + (Rs / 500) * (1 - (w / 1.1)));
+            double Ncr = 0;
 
 
             if (lambda < 28)
@@ -495,7 +497,7 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                double Ncr = ((1472 * Math.Pow(10, 3)) / Math.Pow(l0, 2)) * (((0.11 / 0.1 + e0 / h) * ((b * Math.Pow(h, 3)) / 12)) / 1.6) + Math.Pow(9.13 * 0.00047 * b * h0 * (0.5 * h - a), 2);
+                Ncr = ((1472 * Math.Pow(10, 3)) / Math.Pow(l0, 2)) * (((0.11 / 0.1 + e0 / h) * ((b * Math.Pow(h, 3)) / 12)) / 1.6) + Math.Pow(9.13 * 0.00047 * b * h0 * (0.5 * h - a), 2);
                 n = 1 / (1 - ((N * Math.Pow(10, 4)) / Ncr));
                 rs.ErrCode = EnumErrCode.Empty;
                 tinhThep_Ett.Comment = "Phải kể đến ảnh hưởng của uốn dọc";
@@ -564,11 +566,16 @@ namespace WebApplication1.Controllers
             //    tinhThep_Ett.
             //}
 
-            double mh = tinhThep_Ett.MuyH * mx;
+            tinhThep_Ett.MuyH = 1 / (1 - (N / Ncr));
+            tinhThep_Ett.MuyB = 1 / (1 - (N / Ncr));
+
+            double mh = tinhThep_Ett.MuyH * my;
             tinhThep_Ett.MH = mh;
 
             double mb = tinhThep_Ett.MuyB * mx;
             tinhThep_Ett.MB = mb;
+            tinhThep_Ett.MHH = mh / h;
+            tinhThep_Ett.MBB = mb / b;
 
             if (mh / h <= mb / b)
             {
