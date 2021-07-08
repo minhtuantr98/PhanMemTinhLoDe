@@ -218,7 +218,7 @@ namespace WebApplication1.Controllers
             double Stt = (Rsw * (n * Math.PI * Math.Pow(fi3, 2)) / 4) * qsw / 100;
             tinhThep_Ett.Stt = Stt;
 
-            double Sct = (h0 / 2) > 300 ? (h0 / 2) : 300;
+            double Sct = (h0 / 2) < 300 ? (h0 / 2) : 300;
             tinhThep_Ett.Sct = Sct;
 
             double Smax = (Rbt * b * h0) / Q / 100;
@@ -230,7 +230,7 @@ namespace WebApplication1.Controllers
             double Ad = (n * Math.PI * Math.Pow(fi3, 2)) / 4 / 100;
             tinhThep_Ett.Ad = Ad;
             #endregion
-            #region trả dữ liệu cho hàm  ajã để trình bày lên view
+            #region trả dữ liệu cho hàm ajax để trình bày lên view
             rs.Data = tinhThep_Ett;
             return JsonConvert.SerializeObject(rs);
             #endregion
@@ -422,7 +422,7 @@ namespace WebApplication1.Controllers
             double Stt = (Rsw * (n * Math.PI * Math.Pow(fi3, 2)) / 4) * qsw / 100;
             tinhThep_Ett.Stt = Stt;
 
-            double Sct = (h0 / 2) > 300 ? (h0 / 2) : 300;
+            double Sct = (h0 / 2) < 300 ? (h0 / 2) : 300;
             tinhThep_Ett.Sct = Sct;
 
             double Smax = (Rbt * b * h0) / Q / 100;
@@ -651,7 +651,7 @@ namespace WebApplication1.Controllers
                 tinhThep_Ett.SSABT = "<";
             }
 
-            tinhThep_Ett.Muy = (tinhThep_Ett.Anbt / (b * h0 * Math.Pow(10, -2))) * 100;
+            tinhThep_Ett.Muy = (tinhThep_Ett.Anbt * Math.Pow(10, 6) / (b * h0 ))/100;
             if (tinhThep_Ett.Muy >= 0.05 && tinhThep_Ett.Muy <= 0.4)
             {
                 tinhThep_Ett.MuyCmt = "Bố trí thép hợp lí";

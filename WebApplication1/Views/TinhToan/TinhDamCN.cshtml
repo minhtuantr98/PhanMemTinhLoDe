@@ -55,6 +55,8 @@
                                 <input type="number" id="thongSoNoiNuc5" value="8">
                                 <input type="number" id="thongSoNoiNuc6" value="1.2">
 
+                                <input type="text" id="inputmau" style="text-transform:uppercase" value="đây là thẻ input mẫu">
+
                                 <select id="macBeTong" class="macBeTong">
 
                                     @*<option value="B7,5">B7,5</option>
@@ -162,7 +164,7 @@
                                 <span class="Rs" id="Rs">0</span>
                                 <span class="Rsc" id="Rsc">0</span>
                                 <span class="Rsw" id="Rsw">0</span>
-                                <i><span class="NhanXetCuongDo" id="NhanXetCuongDo"> abcxyz</span></i>
+                                <i><span class="NhanXetCuongDo" id="NhanXetCuongDo"> </span></i>
                                 @*<span class="Es">0</span>*@
                                 <span class="soSanhAlphaAmAr" id="soSanhAlphaAmAr">≤</span>
                                 <span class="Es" id="Es">0</span>
@@ -589,6 +591,9 @@
 
 
         $(document).ready(function () {
+
+        $( "#inputmau" ).val("giá trị mới truyền vào bằng jquery");
+            $( "#inputmau" ).hide();
             getListVatLieu();
             $( "#btnThietLap" ).click(function() {
                 alert( "phần mền chưa cập nhật tính năng này!" );

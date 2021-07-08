@@ -685,7 +685,7 @@
                         <i><span class="MHH" id="MHH">2.4</span></i>
 
                         <span class="MBB" id="MBB">4.2</span>
-                        <span class="SSM"> ≤ </span>
+                        <span class="SSM" id="SSM"> ≤ </span>
 
                         <span class="NXCANH" id="NXCANH">cạnh b</span>
                         <span class="M" id="M">4.9</span>
@@ -1144,6 +1144,12 @@
                         $("#MUYB").html(rs.Data.MuyB.toFixed(2));
                         $("#MHH").html(rs.Data.MHH.toFixed(2));
                         $("#MBB").html(rs.Data.MBB.toFixed(2));
+                        if(rs.Data.MHH <= rs.Data.MBB) {
+                            $("#SSM").html("≤");
+                        } else {
+                            $("#SSM").html(">");
+                        }
+                        
 
                     } else {
                         if (rs.ErrCode == 2) {
